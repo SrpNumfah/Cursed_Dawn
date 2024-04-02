@@ -86,6 +86,7 @@ public class SlotsManager : MonoBehaviour
     public void ClickBtn(int index)
     {
         DisplayResultImage.sprite = SkillSprites[ResultIndexList[index]];
+        Debug.Log(DisplayResultImage);
     }
 
   
