@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     [Header("Move")]
     public float speed = 6f;
+    public ParticleSystem walkDust;
 
     
 
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
    [Header("Health")]
     public float maxHealth = 50;
     public float healingHp = 15;
+
+    [Header("Skill Effects")]
+    public ParticleSystem sheild;
 
 
     
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
            
             animator.SetTrigger("Isrun");
+            walkDust.Play();
             characterController.Move(direction * speed * Time.deltaTime);
 
             if (horizontal > 0)
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetTrigger("idle");
+            walkDust.Stop();
         }
 
         characterController.Move(Physics.gravity * Time.deltaTime);
@@ -90,10 +96,26 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+
+    #region PlayerHealth
     public void Health(int damage)
     {
         maxHealth -= damage;
         Debug.Log("Health" + maxHealth.ToString());
     }
+
+    #endregion
+
+    #region PlayerSkills
+    public void Sheild()
+    {
+        StartCoroutine(TimeToUseSheild());
+        
+    }
+    IEnumerator TimeToUseSheild()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
+    #endregion
 
 }
