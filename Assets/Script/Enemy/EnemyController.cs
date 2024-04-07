@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
        // rune = GameObject.FindObjectOfType<RuneSpawner>();
         agent.stoppingDistance = attackRadius; 
+
         currentHp = maxHp;
 
         
@@ -117,6 +118,9 @@ public class EnemyController : MonoBehaviour
                 FindObjectOfType<PlayerController>().Health(enemyDamage);
                 Debug.Log("Hit player" + enemyDamage);
                 attackCooldown = 3f / attackSpeed;
+
+
+                
             }
           
            

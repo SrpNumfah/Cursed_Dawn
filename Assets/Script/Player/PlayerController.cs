@@ -12,12 +12,13 @@ public class PlayerController : MonoBehaviour
 
     
 
-    public EnemyController enemyController;
+    
 
     [Header("Attack")]
     public float attackSpeed;
     public float attackRange = 0.5f;
-    public float attackDamage;
+    public int attackDamage = 5;
+   
     public Transform attackPoint;
     public LayerMask enemy;
 
@@ -25,15 +26,18 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 50;
     public float healingHp = 15;
 
-    [Header("Skill Effects")]
-    public ParticleSystem sheild;
+    [Header("Skill Sheild")]
+    public ParticleSystem shield;
+    public bool isShieldActive;
 
+   
+   
 
-    
     void Update()
     {
         MoveMent();
         Attack();
+       
     }
     #region MoveMent
     public void MoveMent()
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
     #region Attack
     public void Attack()
     {
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Attack");
@@ -81,6 +86,8 @@ public class PlayerController : MonoBehaviour
             foreach(Collider enemies in hitEnemy)
             {
                 Debug.Log("We hit" + enemies.name);
+
+                enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
             }
         }
        
@@ -100,22 +107,33 @@ public class PlayerController : MonoBehaviour
     #region PlayerHealth
     public void Health(int damage)
     {
-        maxHealth -= damage;
-        Debug.Log("Health" + maxHealth.ToString());
+      
+            maxHealth -= damage;
+            Debug.Log("Health" + maxHealth.ToString());
+
     }
 
     #endregion
 
-    #region PlayerSkills
-    public void Sheild()
+
+    #region Shield_Skill
+    public void ActivedSheild()
     {
-        StartCoroutine(TimeToUseSheild());
-        
+        isShieldActive = true;
+        shield.Play();
+        StartCoroutine(DeactivateShieldAfterDelay());
     }
-    IEnumerator TimeToUseSheild()
+
+    IEnumerator DeactivateShieldAfterDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(5f); 
+        isShieldActive = false;
+        shield.Stop();
     }
+
+
+
+
     #endregion
 
 }
