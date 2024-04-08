@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Skill Sheild")]
     public ParticleSystem shield;
     public bool isShieldActive = false;
+    public GameObject blockText;
 
    
    
@@ -117,6 +118,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.Log("Shield blocked damage!" + damage);
+            BlockingDamage();
         }
            
             
@@ -137,6 +139,13 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    public void BlockingDamage()
+    {
+       
+        blockText.SetActive(true);
+        StartCoroutine(TextPopUp());
+
+    }
 
     IEnumerator DeactivateShieldAfterDelay()
     {
@@ -145,7 +154,11 @@ public class PlayerController : MonoBehaviour
         shield.Stop();
     }
 
-
+    IEnumerator TextPopUp()
+    {
+        yield return new WaitForSeconds(0.5f);
+        blockText.SetActive(false);
+    }
 
 
     #endregion
