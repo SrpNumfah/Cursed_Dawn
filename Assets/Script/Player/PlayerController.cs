@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Reference")]
     public CharacterController characterController;
     public Animator animator;
+
     [Header("Move")]
     public float speed = 6f;
     public ParticleSystem walkDust;
-
-    
 
     
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Skill Sheild")]
     public ParticleSystem shield;
-    public bool isShieldActive;
+    public bool isShieldActive = false;
 
    
    
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         MoveMent();
         Attack();
+        ActivedSheild();
        
     }
     #region MoveMent
@@ -107,9 +108,18 @@ public class PlayerController : MonoBehaviour
     #region PlayerHealth
     public void Health(int damage)
     {
-      
+
+        if (!isShieldActive)
+        {
             maxHealth -= damage;
             Debug.Log("Health" + maxHealth.ToString());
+        }
+        else
+        {
+            Debug.Log("Shield blocked damage!" + damage);
+        }
+           
+            
 
     }
 
@@ -119,14 +129,18 @@ public class PlayerController : MonoBehaviour
     #region Shield_Skill
     public void ActivedSheild()
     {
-        isShieldActive = true;
-        shield.Play();
-        StartCoroutine(DeactivateShieldAfterDelay());
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isShieldActive = true;
+            shield.Play();
+            StartCoroutine(DeactivateShieldAfterDelay());
+        }
+        
     }
 
     IEnumerator DeactivateShieldAfterDelay()
     {
-        yield return new WaitForSeconds(5f); 
+        yield return new WaitForSeconds(10f); 
         isShieldActive = false;
         shield.Stop();
     }
