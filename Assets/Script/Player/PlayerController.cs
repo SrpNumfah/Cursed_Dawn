@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
             foreach(Collider enemies in hitEnemy)
             {
-                Debug.Log("We hit" + enemies.name);
+                Debug.Log("We hit" + enemies.name + attackDamage);
 
                 enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
             }
