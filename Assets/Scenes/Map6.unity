@@ -676,10 +676,10 @@ MonoBehaviour:
     m_Bits: 64
   maxHp: 1000
   currentHealth: 0
-  lookRadius: 94.8
+  lookRadius: 93.36
   enemyDamage: 10
   attackRadius: 18.58
-  attackSpeed: 1
+  attackSpeed: 0
   attackCooldown: 0
   attackPoint: {fileID: 157207400}
 --- !u!195 &701083872
