@@ -22,6 +22,11 @@ public class BossController : MonoBehaviour
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
     public Transform attackPoint;
+
+    [Header("ShockWave")]
+    public ParticleSystem wave;
+    public int shockWaveDamage = 5;
+
    
     bool canAttack;
 
@@ -105,6 +110,11 @@ public class BossController : MonoBehaviour
                 attackCooldown = 3f / attackSpeed;
             }
         }
+    }
+
+    public void ShockWaveSkill()
+    {
+        FindObjectOfType<PlayerController>().Health(enemyDamage - shockWaveDamage);
     }
 
 
