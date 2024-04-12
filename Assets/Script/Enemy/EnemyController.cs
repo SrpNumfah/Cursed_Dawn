@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [Header("EnemyHealth")]
     public int maxHp = 100;
     public int currentHp;
-    public Slider bossHpBar;
+    
 
     [Header("EnemyFollow")]
     public float lookRadius = 10f;
@@ -19,9 +19,18 @@ public class EnemyController : MonoBehaviour
     public float attackCooldown = 0f;
     public Transform attackPoint;
     public Animator enemyAnimation;
-    bool canAttack;
+    bool canAttack = true;
     public LayerMask playerLayer;
     
+    [Header("Boss Only")]
+    public Slider bossHpBar;
+    public GameObject wave;
+    public Transform waveAttackPoint;
+    public int shockwaveDamage = 5;
+    public float shockwaveCooldown = 10f;
+
+
+
 
 
     [Header("Ref")]
@@ -39,6 +48,7 @@ public class EnemyController : MonoBehaviour
 
         currentHp = maxHp;
 
+        
        
 
     }
@@ -121,18 +131,34 @@ public class EnemyController : MonoBehaviour
                 Debug.Log("Hit player" + enemyDamage);
                 attackCooldown = 3f / attackSpeed;
 
+                StartCoroutine(ShockWaveTime());
 
-                
             }
           
-           
-           
         }
        
-       
-       
+    }
+
+    IEnumerator ShockWaveTime()
+    {
+
+        yield return new WaitForSeconds(shockwaveCooldown);
+        ShockWave();
+    }
+
+    public void ShockWave()
+    {
+        if (shockwaveCooldown <= 0)
+        {
+            Instantiate(wave, waveAttackPoint.position, Quaternion.identity);
+            FindObjectOfType<PlayerController>().Health(shockwaveDamage);
+            shockwaveCooldown = 10f;
+            Debug.Log("Hitplayer" + shockwaveDamage);
+        }
+        
     }
     
+   
     
 
     public void TakeDamage(int damage)

@@ -117,7 +117,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _DissolveScroll: {r: 0, g: 0, b: 0, a: 0}
-    - _DistortScrolling: {r: 0.3, g: -1, b: 4, a: 4}
+    - _DistortScrolling: {r: 0.39, g: 0.19, b: 4, a: 4}
     - _OverlayTex_Scroll: {r: 0.1, g: 0.1, b: 1, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
