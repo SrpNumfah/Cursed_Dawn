@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("EnemyHealth")]
     public int maxHp = 100;
     public int currentHp;
+    public Slider bossHpBar;
 
     [Header("EnemyFollow")]
     public float lookRadius = 10f;
@@ -37,13 +39,13 @@ public class EnemyController : MonoBehaviour
 
         currentHp = maxHp;
 
-        
-      
+       
+
     }
 
     private void Update()
     {
-        
+        bossHpBar.value = currentHp;
         float distance = Vector3.Distance(target.position, transform.position);
 
         enemyAnimation.SetBool("idle", true);
@@ -135,6 +137,7 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        
         currentHp -= damage;
 
         // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี

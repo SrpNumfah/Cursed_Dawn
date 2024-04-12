@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("We hit" + enemies.name + attackDamage);
 
                     enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+                
+
                 }
             }
 
