@@ -8,8 +8,9 @@ public class Merchants : MonoBehaviour
 {
     [Header("Refference")]
     private Animator merChantAnim;
-    public CinemachineTargetGroup targetGroupCam;
+    public CinemachineVirtualCamera targetGroup;
    
+    [SerializeField] NPC npc;
 
     [Header("UI")]
     public GameObject TalkBtn;
@@ -17,7 +18,9 @@ public class Merchants : MonoBehaviour
     private void Start()
     {
         merChantAnim = GetComponent<Animator>();
+        npc = GetComponent<NPC>();
         TalkBtn.SetActive(false);
+        targetGroup.gameObject.SetActive(false);
     }
 
    
@@ -38,6 +41,7 @@ public class Merchants : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             merChantAnim.SetBool("IsTriggerPlayer", false);
+            targetGroup.gameObject.SetActive(false);
         }
     }
 
@@ -45,7 +49,9 @@ public class Merchants : MonoBehaviour
     public void TalkingToPlayer()
     {
         TalkBtn.SetActive(false);
-        targetGroupCam.gameObject.SetActive(true);
+
+        targetGroup.gameObject.SetActive(true);
+        npc.TriggerDialogue();
         merChantAnim.SetBool("IsTriggerPlayer", true);
     }
 }
