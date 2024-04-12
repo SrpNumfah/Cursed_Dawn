@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [Header("Reference")]
     public CharacterController characterController;
     public Animator animator;
+    [SerializeField] Merchants merchants;
+   
 
     [Header("Move")]
     public float speed = 6f;
@@ -31,136 +33,152 @@ public class PlayerController : MonoBehaviour
     public bool isShieldActive = false;
     public GameObject blockText;
 
-   
-   
+    private void Start()
+    {
+        merchants = FindObjectOfType<Merchants>();
+
+    }
 
     void Update()
     {
         MoveMent();
         Attack();
         ActivedSheild();
-       
+        TalkingToNPC();
+
     }
+
+
     #region MoveMent
     public void MoveMent()
-    {
-        
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f , vertical).normalized;
-
-        if (direction.magnitude >= 0.1f)
         {
-           
-            animator.SetTrigger("Isrun");
-            walkDust.Play();
-            characterController.Move(direction * speed * Time.deltaTime);
 
-            if (horizontal > 0)
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+            if (direction.magnitude >= 0.1f)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+
+                animator.SetTrigger("Isrun");
+                walkDust.Play();
+                characterController.Move(direction * speed * Time.deltaTime);
+
+                if (horizontal > 0)
+                {
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1f, 1f, 1f);
+                }
             }
             else
             {
-                transform.localScale = new Vector3(1f,1f,1f);
+                animator.SetTrigger("idle");
+                walkDust.Stop();
             }
+
+            characterController.Move(Physics.gravity * Time.deltaTime);
         }
-        else
+        #endregion
+
+        #region Attack
+        public void Attack()
         {
-            animator.SetTrigger("idle");
-            walkDust.Stop();
-        }
 
-        characterController.Move(Physics.gravity * Time.deltaTime);
-    }
-    #endregion
-
-    #region Attack
-    public void Attack()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            animator.SetTrigger("Attack");
-
-           Collider[] hitEnemy =  Physics.OverlapSphere(attackPoint.position,attackRange,enemy);
-
-            foreach(Collider enemies in hitEnemy)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Debug.Log("We hit" + enemies.name + attackDamage);
+                animator.SetTrigger("Attack");
 
-                enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+                Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
+
+                foreach (Collider enemies in hitEnemy)
+                {
+                    Debug.Log("We hit" + enemies.name + attackDamage);
+
+                    enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+                }
             }
-        }
-       
-    }
 
-    private void OnDrawGizmosSelected()
-    {
-        if(attackPoint == null)
-        {
-            return;
         }
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (attackPoint == null)
+            {
+                return;
+            }
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
+        #endregion
+
+
+        #region PlayerHealth
+        public void Health(int damage)
+        {
+
+            if (!isShieldActive)
+            {
+                maxHealth -= damage;
+                Debug.Log("Health" + maxHealth.ToString());
+            }
+            else
+            {
+                Debug.Log("Shield blocked damage!" + damage);
+                BlockingDamage();
+            }
+
+
+
+        }
+
+        #endregion
+
+
+        #region Shield_Skill
+        public void ActivedSheild()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isShieldActive = true;
+                shield.Play();
+                StartCoroutine(DeactivateShieldAfterDelay());
+            }
+
+        }
+        public void BlockingDamage()
+        {
+
+            blockText.SetActive(true);
+            StartCoroutine(TextPopUp());
+
+        }
+
+        IEnumerator DeactivateShieldAfterDelay()
+        {
+            yield return new WaitForSeconds(10f);
+            isShieldActive = false;
+            shield.Stop();
+        }
+
+        IEnumerator TextPopUp()
+        {
+            yield return new WaitForSeconds(0.5f);
+            blockText.SetActive(false);
+        }
+
+
     #endregion
 
-
-    #region PlayerHealth
-    public void Health(int damage)
+    #region TalkWithNpc
+    public void TalkingToNPC()
     {
-
-        if (!isShieldActive)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            maxHealth -= damage;
-            Debug.Log("Health" + maxHealth.ToString());
+            merchants.TalkingToPlayer();
         }
-        else
-        {
-            Debug.Log("Shield blocked damage!" + damage);
-            BlockingDamage();
-        }
-           
-            
-
     }
-
-    #endregion
-
-
-    #region Shield_Skill
-    public void ActivedSheild()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            isShieldActive = true;
-            shield.Play();
-            StartCoroutine(DeactivateShieldAfterDelay());
-        }
-        
-    }
-    public void BlockingDamage()
-    {
-       
-        blockText.SetActive(true);
-        StartCoroutine(TextPopUp());
-
-    }
-
-    IEnumerator DeactivateShieldAfterDelay()
-    {
-        yield return new WaitForSeconds(10f); 
-        isShieldActive = false;
-        shield.Stop();
-    }
-
-    IEnumerator TextPopUp()
-    {
-        yield return new WaitForSeconds(0.5f);
-        blockText.SetActive(false);
-    }
-
-
     #endregion
 
 }
