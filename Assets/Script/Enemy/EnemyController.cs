@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     public GameObject wave;
     public Transform waveAttackPoint;
     public int shockwaveDamage = 5;
-    public float shockwaveCooldown = 10f;
+    public float shockwaveCooldown ;
 
 
 
@@ -152,7 +152,7 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(wave, waveAttackPoint.position, Quaternion.identity);
             FindObjectOfType<PlayerController>().Health(shockwaveDamage);
-            shockwaveCooldown = 10f;
+            shockwaveCooldown = 3f;
             Debug.Log("Hitplayer" + shockwaveDamage);
         }
         
