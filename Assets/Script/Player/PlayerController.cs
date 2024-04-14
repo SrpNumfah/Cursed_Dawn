@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         merchants = FindObjectOfType<Merchants>();
+        maxHealth = PlayerData.instance.maxHealth;
+        attackDamage = PlayerData.instance.attackDamage;
 
     }
 

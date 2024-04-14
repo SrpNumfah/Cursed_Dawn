@@ -6,6 +6,7 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
     public int maxHealth;
+    public int attackDamage;
     public List<int> loadedScenes = new List<int>();
 
     private void Awake()
@@ -13,6 +14,7 @@ public class PlayerData : MonoBehaviour
         if (instance == null)
         {
             maxHealth = 50;
+            attackDamage = 5;
             PlayerPrefs.DeleteAll();
 
             instance = this;

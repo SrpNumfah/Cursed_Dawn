@@ -16,7 +16,7 @@ public class HUD_Manager : MonoBehaviour
     private void Update()
     {
        
-        slider.value = player.maxHealth;
+        slider.value = PlayerData.instance.maxHealth;
 
     }
 }
