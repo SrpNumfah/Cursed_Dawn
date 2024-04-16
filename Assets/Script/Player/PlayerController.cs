@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController characterController;
     public Animator animator;
     [SerializeField] Merchants merchants;
+  
     
    
 
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
+       
         merchants = FindObjectOfType<Merchants>();
         maxHealth = PlayerData.instance.maxHealth;
         attackDamage = PlayerData.instance.attackDamage;
@@ -124,7 +125,7 @@ public class PlayerController : MonoBehaviour
         #region PlayerHealth
         public void Health(int damage)
         {
-           
+      
 
             if (!isShieldActive)
             {

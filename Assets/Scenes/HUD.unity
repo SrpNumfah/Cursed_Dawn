@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 605838688}
+  playerController: {fileID: 0}
 --- !u!4 &166734966
 Transform:
   m_ObjectHideFlags: 0
