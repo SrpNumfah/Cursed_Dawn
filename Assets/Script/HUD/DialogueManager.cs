@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text conversation_Text;
     public GameObject dialogue_UI;
     public Animator dialogue_Anim;
+
+    public CinemachineVirtualCamera dialogueCam;
 
     private Queue<string> sentences;
 
@@ -54,5 +57,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialigue()
     {
         dialogue_Anim.SetBool("IsOpen", false);
+        dialogueCam.gameObject.SetActive(false);
+       
     }
 }

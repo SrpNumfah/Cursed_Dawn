@@ -6964,6 +6964,7 @@ MonoBehaviour:
   conversation_Text: {fileID: 1404234688}
   dialogue_UI: {fileID: 804854645}
   dialogue_Anim: {fileID: 804854649}
+  dialogueCam: {fileID: 0}
 --- !u!1 &1892532880
 GameObject:
   m_ObjectHideFlags: 0

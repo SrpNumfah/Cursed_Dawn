@@ -41,7 +41,7 @@ public class Merchants : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             merChantAnim.SetBool("IsTriggerPlayer", false);
-            targetGroup.gameObject.SetActive(false);
+            
         }
     }
 
