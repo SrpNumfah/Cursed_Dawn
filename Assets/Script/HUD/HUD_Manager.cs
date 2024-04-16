@@ -6,17 +6,20 @@ using UnityEngine.UI;
 public class HUD_Manager : MonoBehaviour
 {
     public Slider slider;
-    PlayerController player;
+    [SerializeField] PlayerController playerController;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
     {
-       
+        playerController.maxHealth = PlayerData.instance.maxHealth;
         slider.value = PlayerData.instance.maxHealth;
+       
 
     }
+
+    
 }

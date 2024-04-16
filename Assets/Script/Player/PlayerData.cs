@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
+
     public int maxHealth;
     public int attackDamage;
     public List<int> loadedScenes = new List<int>();
@@ -15,6 +16,10 @@ public class PlayerData : MonoBehaviour
         {
             maxHealth = 50;
             attackDamage = 5;
+
+
+
+
             PlayerPrefs.DeleteAll();
 
             instance = this;
