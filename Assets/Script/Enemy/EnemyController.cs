@@ -23,9 +23,9 @@ public class EnemyController : MonoBehaviour
     public LayerMask playerLayer;
     
     [Header("Boss Only")]
-    public Slider bossHpBar;
-    public GameObject wave;
-    public Transform waveAttackPoint;
+    [SerializeField] Slider bossHpBar;
+    [SerializeField] GameObject wave;
+    [SerializeField] Transform waveAttackPoint;
     public int shockwaveDamage = 5;
     public float shockwaveCooldown ;
 
@@ -48,7 +48,9 @@ public class EnemyController : MonoBehaviour
 
         currentHp = maxHp;
 
-        
+        bossHpBar = FindObjectOfType<Slider>();
+        wave = FindObjectOfType<GameObject>();
+        waveAttackPoint = FindObjectOfType<Transform>();
        
 
     }
