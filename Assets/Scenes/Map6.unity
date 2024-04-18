@@ -940,7 +940,7 @@ MonoBehaviour:
   maxHp: 200
   currentHp: 0
   lookRadius: 98.34
-  enemyDamage: 10
+  enemyDamage: 20
   attackRadius: 12.3
   attackSpeed: 1
   attackCooldown: 0
@@ -949,7 +949,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  bossHpBar: {fileID: 0}
+  bossHpBar: {fileID: 2107790018}
   wave: {fileID: 5139720486981719458, guid: b337617aeed31a3409975a9c22dd8171, type: 3}
   waveAttackPoint: {fileID: 728365935}
   shockwaveDamage: 5

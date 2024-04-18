@@ -10,23 +10,16 @@ public class HUD_Manager : MonoBehaviour
 
     private void Start()
     {
-       
-         playerController = FindObjectOfType<PlayerController>();
-      
 
     }
 
-    private void Update()
+   
+
+    public void Hpslider(float value)
     {
-        playerController.maxHealth = PlayerData.instance.maxHealth;
-        Hpslider();
 
-
-    }
-
-    public void Hpslider()
-    {
-        slider.value = PlayerData.instance.maxHealth;
+        slider.value = value;
+        Debug.Log(slider.value);
     }
 
     

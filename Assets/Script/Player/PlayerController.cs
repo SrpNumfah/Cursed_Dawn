@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController characterController;
     public Animator animator;
     [SerializeField] Merchants merchants;
+    [SerializeField] HUD_Manager hud;
   
     
    
@@ -38,11 +39,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-       
+        hud = FindObjectOfType<HUD_Manager>();
         merchants = FindObjectOfType<Merchants>();
         maxHealth = PlayerData.instance.maxHealth;
         attackDamage = PlayerData.instance.attackDamage;
-
+        hud.Hpslider(PlayerData.instance.maxHealth);
     }
 
     void Update()
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour
         Attack();
         ActivedSheild();
         TalkingToNPC();
-
+      
+        
     }
 
 
@@ -125,10 +127,10 @@ public class PlayerController : MonoBehaviour
         #region PlayerHealth
         public void Health(int damage)
         {
-      
-
+           
             if (!isShieldActive)
             {
+               
                 PlayerData.instance.maxHealth -= damage;
                 Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
             }
@@ -138,7 +140,7 @@ public class PlayerController : MonoBehaviour
                 BlockingDamage();
             }
 
-
+            hud.Hpslider(PlayerData.instance.maxHealth);
 
         }
 

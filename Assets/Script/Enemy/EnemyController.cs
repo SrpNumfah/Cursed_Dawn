@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     public LayerMask playerLayer;
     
     [Header("Boss Only")]
-    [SerializeField] Slider bossHpBar;
+    public Slider bossHpBar;
     [SerializeField] GameObject wave;
     [SerializeField] Transform waveAttackPoint;
     public int shockwaveDamage = 5;
@@ -48,7 +48,9 @@ public class EnemyController : MonoBehaviour
 
         currentHp = maxHp;
 
-        bossHpBar = FindObjectOfType<Slider>();
+
+
+        attackPoint.gameObject.SetActive(false);
         wave = FindObjectOfType<GameObject>();
         waveAttackPoint = FindObjectOfType<Transform>();
        
@@ -57,7 +59,10 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        bossHpBar.value = currentHp;
+        if (bossHpBar != null)
+        {
+            bossHpBar.value = currentHp;
+        }
         float distance = Vector3.Distance(target.position, transform.position);
 
         enemyAnimation.SetBool("idle", true);
@@ -126,6 +131,7 @@ public class EnemyController : MonoBehaviour
             {
                
                 enemyAnimation.SetBool("IsAttack", true);
+                attackPoint.gameObject.SetActive(true);
 
                 Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
                 
