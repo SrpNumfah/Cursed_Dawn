@@ -67,13 +67,22 @@ public class HUD_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            
             if (currentPotion < potions.Length)
             {
-                PlayerData.instance.maxHealth += healthToAddPerPotion;
-                currentPotion++;
-                OnUpdatePotionUI();
-                Hpslider(PlayerData.instance.maxHealth);
-                Debug.Log(healthToAddPerPotion + currentPotion);
+                if (PlayerData.instance.maxHealth < PlayerData.instance.currentHealth)
+                {
+                    PlayerData.instance.maxHealth += healthToAddPerPotion;
+                    currentPotion++;
+                    OnUpdatePotionUI();
+                    Hpslider(PlayerData.instance.maxHealth);
+                    Debug.Log(healthToAddPerPotion + currentPotion);
+                }
+                else
+                {
+                    Debug.Log("Health is already full!");
+                }
+                
             }
         }
 

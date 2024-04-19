@@ -7,6 +7,7 @@ public class PlayerData : MonoBehaviour
     public static PlayerData instance;
 
     public int maxHealth;
+    public int currentHealth;
     public int attackDamage;
     public int rune;
 
@@ -18,7 +19,7 @@ public class PlayerData : MonoBehaviour
         {
             maxHealth = 50;
             attackDamage = 5;
-            
+            currentHealth = maxHealth;
 
 
 
