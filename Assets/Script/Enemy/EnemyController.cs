@@ -36,13 +36,15 @@ public class EnemyController : MonoBehaviour
     [Header("Ref")]
     Transform target;
     [SerializeField] NavMeshAgent agent;
-    //[SerializeField] RuneSpawner rune;
+   
+   // [SerializeField] RuneSpawner rune;
 
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        
        // rune = GameObject.FindObjectOfType<RuneSpawner>();
         agent.stoppingDistance = attackRadius; 
 
@@ -85,7 +87,8 @@ public class EnemyController : MonoBehaviour
             {
                
                 AttackPlayer();
-               
+                
+
             }
             else
             {
@@ -122,29 +125,29 @@ public class EnemyController : MonoBehaviour
 
     public void AttackPlayer()
     {
-      
-        PlayerController playerController = target.GetComponent<PlayerController>();
-
-        if (playerController != null)
-        {
-            if (attackCooldown <= 0f)
-            {
-               
-                enemyAnimation.SetBool("IsAttack", true);
-                attackPoint.gameObject.SetActive(true);
-
-                Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
-                
-                FindObjectOfType<PlayerController>().Health(enemyDamage);
-                Debug.Log("Hit player" + enemyDamage);
-                attackCooldown = 3f / attackSpeed;
-
-                StartCoroutine(ShockWaveTime());
-
-            }
-          
-        }
        
+         PlayerController playerController = target.GetComponent<PlayerController>();
+
+         if (playerController != null)
+         {
+             if (attackCooldown <= 0f)
+             {
+
+                 enemyAnimation.SetBool("IsAttack", true);
+                 attackPoint.gameObject.SetActive(true);
+
+                 Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
+
+                 FindObjectOfType<PlayerController>().Health(enemyDamage);
+                 Debug.Log("Hit player" + enemyDamage);
+                 attackCooldown = 3f / attackSpeed;
+
+                 StartCoroutine(ShockWaveTime());
+
+             }
+
+         }
+
     }
 
     IEnumerator ShockWaveTime()

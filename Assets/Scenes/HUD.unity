@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 605838688}
+  runeText: {fileID: 1593572281}
   playerController: {fileID: 0}
 --- !u!4 &166734966
 Transform:
@@ -6287,7 +6288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 000000000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89c006815db29104cb02c15dbd0b27c6, type: 2}
   m_sharedMaterial: {fileID: 8673740635567640240, guid: 89c006815db29104cb02c15dbd0b27c6,
