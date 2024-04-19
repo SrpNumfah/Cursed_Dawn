@@ -28,6 +28,7 @@ public class HUD_Manager : MonoBehaviour
     {
         OnUpdateRune();
         OnUpdatePotionUI();
+        currentPotion = PlayerData.instance.currentPotion;
         
     }
 
@@ -53,7 +54,7 @@ public class HUD_Manager : MonoBehaviour
     {
         for (int i = 0; i < potions.Length; i++)
         {
-            if (i < currentPotion)
+            if (i < PlayerData.instance.currentPotion)
             {
                 potions[i].sprite = emptyPotion;
             }
@@ -68,15 +69,15 @@ public class HUD_Manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             
-            if (currentPotion < potions.Length)
+            if (PlayerData.instance.currentPotion < potions.Length)
             {
                 if (PlayerData.instance.maxHealth < PlayerData.instance.currentHealth)
                 {
                     PlayerData.instance.maxHealth += healthToAddPerPotion;
-                    currentPotion++;
+                    PlayerData.instance.currentPotion++;
                     OnUpdatePotionUI();
                     Hpslider(PlayerData.instance.maxHealth);
-                    Debug.Log(healthToAddPerPotion + currentPotion);
+                    Debug.Log(healthToAddPerPotion);
                 }
                 else
                 {
