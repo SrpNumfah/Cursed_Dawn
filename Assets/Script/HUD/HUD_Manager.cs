@@ -41,6 +41,8 @@ public class HUD_Manager : MonoBehaviour
 
         slider.value = value;
         Debug.Log(slider.value);
+
+        
     }
 
     public void OnUpdateRune()
@@ -70,6 +72,7 @@ public class HUD_Manager : MonoBehaviour
                 PlayerData.instance.maxHealth += healthToAddPerPotion;
                 currentPotion++;
                 OnUpdatePotionUI();
+                Hpslider(PlayerData.instance.maxHealth);
                 Debug.Log(healthToAddPerPotion + currentPotion);
             }
         }
