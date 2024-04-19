@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         Attack();
         ActivedSheild();
         TalkingToNPC();
-      
+        hud.OnUsePotion();
         
     }
 
@@ -127,7 +127,8 @@ public class PlayerController : MonoBehaviour
         #region PlayerHealth
         public void Health(int damage)
         {
-           
+       
+       
             if (!isShieldActive)
             {
                

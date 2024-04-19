@@ -12,6 +12,14 @@ public class HUD_Manager : MonoBehaviour
     [Header("CollectRune")]
     public TMP_Text runeText;
 
+    [Header("Potion")]
+    [SerializeField] int currentPotion = 0;
+    public Image[] potions;
+    public Sprite fullPotion;
+    public Sprite emptyPotion;
+    private const int healthToAddPerPotion = 10;
+
+
 
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
@@ -19,9 +27,14 @@ public class HUD_Manager : MonoBehaviour
     private void Start()
     {
         OnUpdateRune();
+        OnUpdatePotionUI();
+        
     }
 
-   
+    private void Update()
+    {
+       
+    }
 
     public void Hpslider(float value)
     {
@@ -34,6 +47,33 @@ public class HUD_Manager : MonoBehaviour
     {
         runeText.text = PlayerData.instance.rune.ToString();
     }
+    public void OnUpdatePotionUI()
+    {
+        for (int i = 0; i < potions.Length; i++)
+        {
+            if (i < currentPotion)
+            {
+                potions[i].sprite = emptyPotion;
+            }
+            else
+            {
+                potions[i].sprite = fullPotion;
+            }
+        }
+    }
+    public void OnUsePotion()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (currentPotion < potions.Length)
+            {
+                PlayerData.instance.maxHealth += healthToAddPerPotion;
+                currentPotion++;
+                OnUpdatePotionUI();
+                Debug.Log(healthToAddPerPotion + currentPotion);
+            }
+        }
 
+    }
     
 }
