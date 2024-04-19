@@ -922,7 +922,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+  currentHealth: 0
   attackDamage: 0
+  rune: 0
+  currentPotion: 0
   loadedScenes: 
 --- !u!4 &1536016127
 Transform:
