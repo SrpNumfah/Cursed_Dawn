@@ -18,6 +18,7 @@ public class HUD_Manager : MonoBehaviour
     public Sprite fullPotion;
     public Sprite emptyPotion;
     private const int healthToAddPerPotion = 10;
+    [SerializeField] ParticleSystem healEffect;
 
 
 
@@ -29,7 +30,18 @@ public class HUD_Manager : MonoBehaviour
         OnUpdateRune();
         OnUpdatePotionUI();
         currentPotion = PlayerData.instance.currentPotion;
-        
+
+        GameObject heal = GameObject.Find("Healing");
+        ParticleSystem particle = healEffect;
+        healEffect = heal.GetComponent<ParticleSystem>();
+       
+
+
+       
+         
+
+
+
     }
 
     private void Update()
@@ -68,6 +80,7 @@ public class HUD_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            healEffect.Play();
             
             if (PlayerData.instance.currentPotion < potions.Length)
             {
@@ -86,6 +99,8 @@ public class HUD_Manager : MonoBehaviour
                 
             }
         }
+       
+
 
     }
     

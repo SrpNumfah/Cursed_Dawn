@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     [SerializeField] Merchants merchants;
     [SerializeField] HUD_Manager hud;
+    
   
     
    
