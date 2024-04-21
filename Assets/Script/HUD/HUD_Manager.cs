@@ -20,6 +20,9 @@ public class HUD_Manager : MonoBehaviour
     private const int healthToAddPerPotion = 10;
     [SerializeField] ParticleSystem healEffect;
 
+    [Header("Pause_Menu")]
+    public static bool GameIsPause = false;
+    public GameObject pauseMenuPanel;
 
 
     [Header("Reference")]
@@ -35,20 +38,14 @@ public class HUD_Manager : MonoBehaviour
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
        
-
-
-       
-         
-
-
-
     }
 
     private void Update()
     {
-       
+        OnPauseMenu();
     }
 
+    #region HpSlider
     public void Hpslider(float value)
     {
 
@@ -57,11 +54,16 @@ public class HUD_Manager : MonoBehaviour
 
         
     }
+    #endregion
 
+    #region Rune
     public void OnUpdateRune()
     {
         runeText.text = PlayerData.instance.rune.ToString();
     }
+    #endregion
+
+    #region Potion
     public void OnUpdatePotionUI()
     {
         for (int i = 0; i < potions.Length; i++)
@@ -76,6 +78,7 @@ public class HUD_Manager : MonoBehaviour
             }
         }
     }
+
     public void OnUsePotion()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -103,5 +106,36 @@ public class HUD_Manager : MonoBehaviour
 
 
     }
-    
+    #endregion
+
+
+    #region Pause_Menu
+
+    public void OnPauseMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPause) // = true
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+    public void Resume()
+    {
+        pauseMenuPanel.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPause = false;
+    }
+    public void Pause()
+    {
+        pauseMenuPanel.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPause = true;
+    }
+    #endregion
 }
