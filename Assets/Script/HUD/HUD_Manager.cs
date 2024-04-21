@@ -8,6 +8,7 @@ public class HUD_Manager : MonoBehaviour
 {
     [Header("PlayerHp")]
     public Slider slider;
+    public TMP_Text hpText;
 
     [Header("CollectRune")]
     public TMP_Text runeText;
@@ -50,6 +51,7 @@ public class HUD_Manager : MonoBehaviour
     {
 
         slider.value = value;
+        hpText.text = value.ToString() + "/50";
         Debug.Log(slider.value);
 
         
