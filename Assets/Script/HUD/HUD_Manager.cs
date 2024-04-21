@@ -22,15 +22,25 @@ public class HUD_Manager : MonoBehaviour
     [SerializeField] ParticleSystem healEffect;
 
     [Header("Pause_Menu")]
-    public static bool GameIsPause = false;
     public GameObject pauseMenuPanel;
+    public static bool GameIsPause = false;
+    
 
+    [Header("EXP")]
+    public Slider expSlider;
+    public TMP_Text levelText;
+
+    public int currentLevel = 1;
+    public int currentExp = 0;
+    public int expToLevelUp = 100;
+    public int expIncreaseFactor = 2;
 
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
 
     private void Start()
     {
+        //LevelUp();
         OnUpdateRune();
         OnUpdatePotionUI();
         currentPotion = PlayerData.instance.currentPotion;
@@ -38,12 +48,17 @@ public class HUD_Manager : MonoBehaviour
         GameObject heal = GameObject.Find("Healing");
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
-       
+
+        
+
+
     }
 
     private void Update()
     {
         OnPauseMenu();
+        EXPSlider();
+        
     }
 
     #region HpSlider
@@ -110,7 +125,6 @@ public class HUD_Manager : MonoBehaviour
     }
     #endregion
 
-
     #region Pause_Menu
 
     public void OnPauseMenu()
@@ -139,5 +153,40 @@ public class HUD_Manager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPause = true;
     }
+    #endregion
+
+    #region EXP
+    
+
+    public void GainExpFromEnemy(int amount)
+    {
+        GainExp(amount);
+    }
+    void GainExp(int amount)
+    {
+        currentExp += amount;
+        while (currentExp >= expToLevelUp)
+        {
+            LevelUp();
+            
+        }
+    }
+
+    void LevelUp()
+    {
+        currentLevel++;
+        
+      //  currentExp -= expToLevelUp;
+       // expToLevelUp *= expIncreaseFactor;
+
+    }
+
+    public void EXPSlider()
+    {
+        expSlider.maxValue = expToLevelUp;
+        expSlider.value = currentExp;
+        levelText.text = currentLevel.ToString();
+    }
+
     #endregion
 }

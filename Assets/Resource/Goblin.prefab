@@ -145,7 +145,13 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  bossHpBar: {fileID: 0}
+  wave: {fileID: 0}
+  waveAttackPoint: {fileID: 0}
+  shockwaveDamage: 5
+  shockwaveCooldown: 0
   agent: {fileID: 0}
+  experienceValue: 10
 --- !u!65 &864050351564449192
 BoxCollider:
   m_ObjectHideFlags: 0

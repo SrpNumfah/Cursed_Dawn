@@ -454,6 +454,12 @@ MonoBehaviour:
   emptyPotion: {fileID: 21300000, guid: 74f5d341432290548b2db47d660a8286, type: 3}
   healEffect: {fileID: 0}
   pauseMenuPanel: {fileID: 213547408}
+  expSlider: {fileID: 1234644237}
+  levelText: {fileID: 2130024879}
+  currentLevel: 0
+  currentExp: 0
+  expToLevelUp: 100
+  expIncreaseFactor: 0
   playerController: {fileID: 0}
 --- !u!4 &166734966
 Transform:
@@ -5054,8 +5060,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LVL.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 608d9612821cc8c4796d047645e66487, type: 2}
-  m_sharedMaterial: {fileID: -7118315391481256838, guid: 608d9612821cc8c4796d047645e66487,
+  m_fontAsset: {fileID: 11400000, guid: c8374f16dca7c0f4cad1b99379604332, type: 2}
+  m_sharedMaterial: {fileID: 4552957469224831086, guid: c8374f16dca7c0f4cad1b99379604332,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5715,9 +5721,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8385,8 +8391,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 608d9612821cc8c4796d047645e66487, type: 2}
-  m_sharedMaterial: {fileID: -7118315391481256838, guid: 608d9612821cc8c4796d047645e66487,
+  m_fontAsset: {fileID: 11400000, guid: c8374f16dca7c0f4cad1b99379604332, type: 2}
+  m_sharedMaterial: {fileID: 4552957469224831086, guid: c8374f16dca7c0f4cad1b99379604332,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
     [Header("Ref")]
     Transform target;
     [SerializeField] NavMeshAgent agent;
+    
    
    // [SerializeField] RuneSpawner rune;
 
@@ -193,12 +194,19 @@ public class EnemyController : MonoBehaviour
         // ตีต่อไม่ได้แล้ว ให้มันเป็นศพละเราไปเหยียบซ้ำ
         GetComponent<Collider>().enabled = false; 
         this.enabled = false;
+
+
+        //  rune.Spawner();
+
+        HUD_Manager hud = FindObjectOfType<HUD_Manager>();
+
+        if (hud != null)
+        {
+            hud.GainExpFromEnemy(10);
+        }
+
         Destroy(gameObject);
-        
-      //  rune.Spawner();
-       
-     
-        
+
     }
 
     private void OnDrawGizmosSelected()

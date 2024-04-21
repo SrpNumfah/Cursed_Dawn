@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         ActivedSheild();
         TalkingToNPC();
         hud.OnUsePotion();
+       
         
     }
 
