@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnPointPlayer : MonoBehaviour
 {
-    public EnemyRandom enemyRandom;
+    
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform spawnPoint;
     private GameObject spawnedPlayer;
@@ -18,18 +18,7 @@ public class SpawnPointPlayer : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        
-
-
-        if (enemyRandom != null)
-        {
-            enemyRandom.SpawnEnemy(5);
-            Debug.Log(enemyRandom);
-        }
-        
-    }
+    
 
     public void SpawnPlayer()
     {

@@ -5,10 +5,13 @@ using UnityEngine;
 public class EnemyRandom : MonoBehaviour
 {
     public GameObject enemyPrefabs;
-    
 
 
-   
+
+    private void Start()
+    {
+        SpawnEnemy(5);
+    }
 
     public void SpawnEnemy(int spawnCount)
     {
