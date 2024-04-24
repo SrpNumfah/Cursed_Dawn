@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class EnemyRandom : MonoBehaviour
 {
-    [SerializeField] GameObject enemyPrefabs;
-    public float posX;
-    public float posZ;
-    public int enemyCount;
+    public GameObject enemyPrefabs;
+    
 
-    private void Start()
+
+   
+
+    public void SpawnEnemy(int spawnCount)
     {
-        StartCoroutine(OnSpawnEnemy());
-    }
-
-    IEnumerator OnSpawnEnemy()
-    {
-
-        while (enemyCount < 5)
-        {
-            posX = Random.Range(-25, 25);
-            posZ = Random.Range(1, -40);
-            Instantiate(enemyPrefabs, new Vector3(posX, 3.79f, posZ), Quaternion.identity);
-            yield return new WaitForSeconds(0f);
-            enemyCount += 1;
-        }
         
+        for (int i = 0; i < spawnCount; i++)
+        {
+            Vector3 spawnPosition = new Vector3(Random.Range(-50, 55), Random.Range(-33, -35));
+            Instantiate(enemyPrefabs, spawnPosition, Quaternion.identity);
+        }
+      
     }
+
+   
 }

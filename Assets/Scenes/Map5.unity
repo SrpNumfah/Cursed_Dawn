@@ -420,9 +420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs: {fileID: 864050351564449199, guid: f3df13285254b6f4e888f2fa35b160f5,
     type: 3}
-  posX: 0
-  posZ: 0
-  enemyCount: 0
 --- !u!114 &323455054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f54d92fb5e9b1f48a707411ccb68c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyRandom: {fileID: 323455053}
   playerPrefab: {fileID: 2926957700476118908, guid: a363155b8f7bf2c40b908d5a34f80a06,
     type: 3}
   spawnPoint: {fileID: 318025549}
@@ -744,7 +742,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+  currentHealth: 0
   attackDamage: 0
+  rune: 0
+  currentPotion: 0
   loadedScenes: 
 --- !u!4 &799103984
 Transform:
