@@ -940,7 +940,7 @@ MonoBehaviour:
   maxHp: 200
   currentHp: 0
   lookRadius: 98.34
-  enemyDamage: 20
+  enemyDamage: 10
   attackRadius: 12.3
   attackSpeed: 1
   attackCooldown: 0
@@ -1767,7 +1767,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+  currentHealth: 0
   attackDamage: 0
+  rune: 0
+  currentPotion: 0
   loadedScenes: 
 --- !u!4 &1929446620
 Transform:

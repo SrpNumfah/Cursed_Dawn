@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c59df269bd3d544913802cb3c86e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 50
   currentHp: 0
   lookRadius: 25.18
-  enemyDamage: 10
+  enemyDamage: 1
   attackRadius: 4.4
   attackSpeed: 1
   attackCooldown: 0
@@ -151,7 +151,6 @@ MonoBehaviour:
   shockwaveDamage: 5
   shockwaveCooldown: 0
   agent: {fileID: 0}
-  experienceValue: 10
 --- !u!65 &864050351564449192
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour
     public int attackDamage;
     public int rune;
     public int currentPotion;
+    public int currentExp;
 
     public List<int> loadedScenes = new List<int>();
 
