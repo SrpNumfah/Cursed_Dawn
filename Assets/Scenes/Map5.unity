@@ -396,7 +396,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323455056}
-  - component: {fileID: 323455055}
   - component: {fileID: 323455054}
   - component: {fileID: 323455053}
   m_Layer: 0
@@ -432,23 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f54d92fb5e9b1f48a707411ccb68c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRandom: {fileID: 323455053}
   playerPrefab: {fileID: 2926957700476118908, guid: a363155b8f7bf2c40b908d5a34f80a06,
     type: 3}
   spawnPoint: {fileID: 318025549}
---- !u!114 &323455055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323455052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc39dd919240e6746b0efc110bf6f11e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2926957700476118908, guid: a363155b8f7bf2c40b908d5a34f80a06, type: 3}
 --- !u!4 &323455056
 Transform:
   m_ObjectHideFlags: 0
@@ -746,6 +731,7 @@ MonoBehaviour:
   attackDamage: 0
   rune: 0
   currentPotion: 0
+  currentExp: 0
   loadedScenes: 
 --- !u!4 &799103984
 Transform:

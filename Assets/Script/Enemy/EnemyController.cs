@@ -143,7 +143,7 @@ public class EnemyController : MonoBehaviour
                  Debug.Log("Hit player" + enemyDamage);
                  attackCooldown = 3f / attackSpeed;
 
-                 StartCoroutine(ShockWaveTime());
+               //  StartCoroutine(ShockWaveTime());
 
              }
 

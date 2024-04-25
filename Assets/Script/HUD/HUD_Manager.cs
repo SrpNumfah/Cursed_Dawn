@@ -175,9 +175,8 @@ public class HUD_Manager : MonoBehaviour
     void LevelUp()
     {
         currentLevel++;
-        
-      //  currentExp -= expToLevelUp;
-       // expToLevelUp *= expIncreaseFactor;
+        PlayerData.instance.currentExp -= expToLevelUp;
+        expToLevelUp *= expIncreaseFactor;
 
     }
 

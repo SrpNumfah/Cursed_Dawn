@@ -589,6 +589,7 @@ MonoBehaviour:
   attackDamage: 0
   rune: 0
   currentPotion: 0
+  currentExp: 0
   loadedScenes: 
 --- !u!4 &823089181
 Transform:
@@ -1964,7 +1965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f54d92fb5e9b1f48a707411ccb68c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRandom: {fileID: 0}
   playerPrefab: {fileID: 2926957700476118908, guid: a363155b8f7bf2c40b908d5a34f80a06,
     type: 3}
   spawnPoint: {fileID: 1494171347}
