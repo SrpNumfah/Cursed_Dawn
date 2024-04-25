@@ -40,7 +40,7 @@ public class HUD_Manager : MonoBehaviour
 
     private void Start()
     {
-        //LevelUp();
+      
         OnUpdateRune();
         OnUpdatePotionUI();
         currentPotion = PlayerData.instance.currentPotion;

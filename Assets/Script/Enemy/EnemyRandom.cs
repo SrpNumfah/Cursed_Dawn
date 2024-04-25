@@ -20,7 +20,8 @@ public class EnemyRandom : MonoBehaviour
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-50, 55), Random.Range(-33, -35));
             Instantiate(enemyPrefabs, spawnPosition, Quaternion.identity);
-            
+
+            continue;
         }
       
     }

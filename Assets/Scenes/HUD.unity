@@ -459,7 +459,7 @@ MonoBehaviour:
   currentLevel: 0
   currentExp: 0
   expToLevelUp: 100
-  expIncreaseFactor: 0
+  expIncreaseFactor: 2
   playerController: {fileID: 0}
 --- !u!4 &166734966
 Transform:
