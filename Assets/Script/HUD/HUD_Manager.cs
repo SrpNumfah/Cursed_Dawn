@@ -50,7 +50,7 @@ public class HUD_Manager : MonoBehaviour
         healEffect = heal.GetComponent<ParticleSystem>();
 
         currentExp = PlayerData.instance.currentExp;
-
+        currentLevel = PlayerData.instance.currentLevel;
 
     }
 
@@ -174,7 +174,7 @@ public class HUD_Manager : MonoBehaviour
 
     void LevelUp()
     {
-        currentLevel++;
+        PlayerData.instance.currentLevel++;
         PlayerData.instance.currentExp -= expToLevelUp;
         expToLevelUp *= expIncreaseFactor;
 
@@ -184,7 +184,7 @@ public class HUD_Manager : MonoBehaviour
     {
         expSlider.maxValue = expToLevelUp;
         expSlider.value = PlayerData.instance.currentExp;
-        levelText.text = currentLevel.ToString();
+        levelText.text = PlayerData.instance.currentLevel.ToString();
     }
 
     #endregion

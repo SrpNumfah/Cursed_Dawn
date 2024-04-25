@@ -709,7 +709,6 @@ GameObject:
   - component: {fileID: 1443995640}
   - component: {fileID: 1443995642}
   - component: {fileID: 1443995643}
-  - component: {fileID: 1443995644}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -761,19 +760,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs: {fileID: 864050351564449199, guid: f3df13285254b6f4e888f2fa35b160f5,
     type: 3}
---- !u!114 &1443995644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443995639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc39dd919240e6746b0efc110bf6f11e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2926957700476118908, guid: a363155b8f7bf2c40b908d5a34f80a06, type: 3}
 --- !u!1 &1514519403
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +910,7 @@ MonoBehaviour:
   rune: 0
   currentPotion: 0
   currentExp: 0
+  currentLevel: 0
   loadedScenes: 
 --- !u!4 &1536016127
 Transform:
