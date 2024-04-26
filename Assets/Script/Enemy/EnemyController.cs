@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("EnemyFollow")]
     public float lookRadius = 10f;
-    public int enemyDamage = 10;
+   // public int enemyDamage = 10;
     public float attackRadius = 2f;
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
@@ -135,12 +135,12 @@ public class EnemyController : MonoBehaviour
              {
 
                  enemyAnimation.SetBool("IsAttack", true);
-                 attackPoint.gameObject.SetActive(true);
+                
 
                  Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
 
-                 FindObjectOfType<PlayerController>().Health(enemyDamage);
-                 Debug.Log("Hit player" + enemyDamage);
+                 //FindObjectOfType<PlayerController>().Health(enemyDamage);
+                // Debug.Log("Hit player" + enemyDamage);
                  attackCooldown = 3f / attackSpeed;
 
                //  StartCoroutine(ShockWaveTime());
