@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillHolder : MonoBehaviour
+public class BasicSkill_enemy : MonoBehaviour
 {
-    [Header("Malee")]
-    
+    [Header("Melee")]
     public Transform attackPoint;
     public int enemyDamage = 10;
 
+   
 
-
-    public void OnMaleeDamage()
+    public void OnMeleeDamage()
     {
         if (attackPoint != null)
         {
@@ -26,6 +25,6 @@ public class SkillHolder : MonoBehaviour
        
     }
 
-    
    
+
 }

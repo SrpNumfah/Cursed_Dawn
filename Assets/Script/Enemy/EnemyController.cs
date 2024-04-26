@@ -139,11 +139,10 @@ public class EnemyController : MonoBehaviour
 
                  Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
 
-                 //FindObjectOfType<PlayerController>().Health(enemyDamage);
-                // Debug.Log("Hit player" + enemyDamage);
+                 
                  attackCooldown = 3f / attackSpeed;
 
-               //  StartCoroutine(ShockWaveTime());
+               
 
              }
 
@@ -151,24 +150,8 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    IEnumerator ShockWaveTime()
-    {
-
-        yield return new WaitForSeconds(shockwaveCooldown);
-        ShockWave();
-    }
-
-    public void ShockWave()
-    {
-        if (shockwaveCooldown <= 0)
-        {
-            Instantiate(wave, waveAttackPoint.position, Quaternion.identity);
-            FindObjectOfType<PlayerController>().Health(shockwaveDamage);
-            shockwaveCooldown = 3f;
-            Debug.Log("Hitplayer" + shockwaveDamage);
-        }
-        
-    }
+   
+    
     
    
     

@@ -969,6 +969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 157207400}
   enemyDamage: 10
+  waveDamge: 5
+  waveAttackRange: {fileID: 0}
 --- !u!1 &714519543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &728365935
 Transform:
   m_ObjectHideFlags: 0
