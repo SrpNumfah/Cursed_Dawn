@@ -11,7 +11,7 @@ public class EnemyRandom : MonoBehaviour
 
     private void Start()
     {
-        this.enemyCount = Random.Range(5, 10);
+        enemyCount = Random.Range(5, 10);
         SpawnEnemy(enemyCount);
        
     }
