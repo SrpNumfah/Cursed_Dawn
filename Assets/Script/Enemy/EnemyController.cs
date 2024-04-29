@@ -24,19 +24,17 @@ public class EnemyController : MonoBehaviour
     
     [Header("Boss Only")]
     public Slider bossHpBar;
-    [SerializeField] GameObject wave;
-    [SerializeField] Transform waveAttackPoint;
-    public int shockwaveDamage = 5;
-    public float shockwaveCooldown ;
+    
 
 
 
 
 
     [Header("Ref")]
+    public ParticleSystem portal;
     Transform target;
     [SerializeField] NavMeshAgent agent;
-    
+   
    
    // [SerializeField] RuneSpawner rune;
 
@@ -45,7 +43,8 @@ public class EnemyController : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        
+
+        portal.Play();
        // rune = GameObject.FindObjectOfType<RuneSpawner>();
         agent.stoppingDistance = attackRadius; 
 
@@ -54,8 +53,7 @@ public class EnemyController : MonoBehaviour
 
 
         attackPoint.gameObject.SetActive(false);
-        wave = FindObjectOfType<GameObject>();
-        waveAttackPoint = FindObjectOfType<Transform>();
+        
        
 
     }
@@ -146,7 +144,7 @@ public class EnemyController : MonoBehaviour
 
              }
 
-         }
+         } 
 
     }
 
@@ -163,11 +161,21 @@ public class EnemyController : MonoBehaviour
 
         // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี
 
+        if (currentHp <= 100)
+        {
+            // refernce function forbossskill
+        }
+        else
+        {
+            AttackPlayer();
+        }
+
         if (currentHp <= 0)
         {
             OnGoblinDie();
             
         }
+
     }
 
     void OnGoblinDie()

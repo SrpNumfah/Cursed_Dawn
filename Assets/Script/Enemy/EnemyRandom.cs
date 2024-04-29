@@ -7,6 +7,7 @@ public class EnemyRandom : MonoBehaviour
     public GameObject enemyPrefabs;
     public Transform[] spawnPoint;
     private GameObject[] _spawnEnemy;
+  
     public int enemyCount;
 
     private void Start()
@@ -25,9 +26,14 @@ public class EnemyRandom : MonoBehaviour
         {
             int randomSpawmIndex = Random.Range(0, spawnPoint.Length);
             Vector3 randomPosition = spawnPoint[randomSpawmIndex].position;
+
             _spawnEnemy[i] = Instantiate(enemyPrefabs, randomPosition, Quaternion.identity);
+
+
+           
             continue;
         }
+
     }
 
    
