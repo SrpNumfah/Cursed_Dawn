@@ -98,6 +98,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 enemyAnimation.SetBool("IsAttack", false);
+                enemyAnimation.SetBool("stageAttack", false);
             }
          
             Vector3 lookPos = new Vector3(25,0,0);
