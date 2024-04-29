@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HUD_Manager : MonoBehaviour
 {
@@ -35,8 +36,12 @@ public class HUD_Manager : MonoBehaviour
     public int expToLevelUp = 100;
     public int expIncreaseFactor = 2;
 
+   
+
+
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
+    [SerializeField] Animator _fade;
 
     private void Start()
     {
@@ -48,6 +53,10 @@ public class HUD_Manager : MonoBehaviour
         GameObject heal = GameObject.Find("Healing");
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
+
+        GameObject fade = GameObject.Find("LoadScene");
+        Animator fade_anim = _fade;
+        _fade = fade.GetComponent<Animator>();
 
         currentExp = PlayerData.instance.currentExp;
         currentLevel = PlayerData.instance.currentLevel;
@@ -188,4 +197,19 @@ public class HUD_Manager : MonoBehaviour
     }
 
     #endregion
+
+    #region Scene_PauseMenu
+    public void GoToLobby(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
+      //  _fade.SetTrigger("FadeOut");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        _fade.SetTrigger("FadeOut");
+        Debug.Log("Quit");
+    }
+    #endregion 
 }
