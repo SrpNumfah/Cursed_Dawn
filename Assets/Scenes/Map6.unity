@@ -888,7 +888,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 157207400}
-  - {fileID: 728365935}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -951,6 +950,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bossHpBar: {fileID: 2107790018}
+  forBossSkills: {fileID: 0}
+  portal: {fileID: 0}
   agent: {fileID: 0}
 --- !u!114 &701083874
 MonoBehaviour:
@@ -978,7 +979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de398221435ffa7498ee563a3a074a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 10
+  berserkAttack: 10
+  attackPoint: {fileID: 157207400}
 --- !u!1 &714519543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,37 +1057,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714519543}
   m_CullTransparentMesh: 1
---- !u!1 &728365934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 728365935}
-  m_Layer: 3
-  m_Name: WavePointAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &728365935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728365934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -4.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 701083869}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758054815
 GameObject:
   m_ObjectHideFlags: 0

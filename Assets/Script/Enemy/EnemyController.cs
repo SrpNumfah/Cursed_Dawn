@@ -13,7 +13,6 @@ public class EnemyController : MonoBehaviour
 
     [Header("EnemyFollow")]
     public float lookRadius = 10f;
-   // public int enemyDamage = 10;
     public float attackRadius = 2f;
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
@@ -24,7 +23,8 @@ public class EnemyController : MonoBehaviour
     
     [Header("Boss Only")]
     public Slider bossHpBar;
-    
+   
+
 
 
 
@@ -44,7 +44,12 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
 
-        portal.Play();
+
+        if (portal != null)
+        {
+            portal.Play();
+        }
+        
        // rune = GameObject.FindObjectOfType<RuneSpawner>();
         agent.stoppingDistance = attackRadius; 
 
@@ -53,8 +58,9 @@ public class EnemyController : MonoBehaviour
 
 
         attackPoint.gameObject.SetActive(false);
-        
+
        
+      
 
     }
 
@@ -129,20 +135,29 @@ public class EnemyController : MonoBehaviour
 
          if (playerController != null)
          {
-             if (attackCooldown <= 0f)
-             {
+            if (currentHp <= 100)
+            {
+                enemyAnimation.SetBool("stageAttack", true);
+                enemyAnimation.SetFloat("LoopAttack",3f);
+            }
+            else
+            {
+                if (attackCooldown <= 0f)
+                {
+                    enemyAnimation.SetBool("stageAttack", false);
+                    enemyAnimation.SetBool("IsAttack", true);
 
-                 enemyAnimation.SetBool("IsAttack", true);
-                
 
-                 Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
+                    Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
 
-                 
-                 attackCooldown = 3f / attackSpeed;
 
-               
+                    attackCooldown = 3f / attackSpeed;
 
-             }
+
+
+                }
+            }
+           
 
          } 
 
@@ -161,14 +176,7 @@ public class EnemyController : MonoBehaviour
 
         // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี
 
-        if (currentHp <= 100)
-        {
-            // refernce function forbossskill
-        }
-        else
-        {
-            AttackPlayer();
-        }
+       
 
         if (currentHp <= 0)
         {
