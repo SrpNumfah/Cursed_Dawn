@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     
     [Header("Boss Only")]
     public Slider bossHpBar;
-   
+    [SerializeField] EnemyRandom enemyRandom;
 
 
 
@@ -44,6 +44,11 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
 
+        enemyRandom = FindObjectOfType<EnemyRandom>();
+        if (bossHpBar != null)
+        {
+            enemyRandom.enabled = false;
+        }
 
         if (portal != null)
         {
@@ -69,6 +74,7 @@ public class EnemyController : MonoBehaviour
         if (bossHpBar != null)
         {
             bossHpBar.value = currentHp;
+           
         }
         float distance = Vector3.Distance(target.position, transform.position);
 
@@ -155,6 +161,8 @@ public class EnemyController : MonoBehaviour
                 {
                     enemyAnimation.SetBool("stageAttack", true);
                     enemyAnimation.SetFloat("LoopAttack", 3f);
+                    enemyRandom.enabled = true;
+                   
                 }
             }
           
