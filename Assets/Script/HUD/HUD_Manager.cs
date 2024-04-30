@@ -199,10 +199,10 @@ public class HUD_Manager : MonoBehaviour
     #endregion
 
     #region Scene_PauseMenu
-    public void GoToLobby(string nameScene)
+    public void GoToLobby()
     {
-        SceneManager.LoadScene(nameScene);
-      //  _fade.SetTrigger("FadeOut");
+        SceneManager.LoadScene("MainMenu");
+        _fade.SetTrigger("FadeOut");
     }
 
     public void ExitGame()

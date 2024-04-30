@@ -134,33 +134,31 @@ public class EnemyController : MonoBehaviour
        
          PlayerController playerController = target.GetComponent<PlayerController>();
 
-         if (playerController != null)
-         {
-            if (currentHp <= 100)
+        if (playerController != null)
+        {
+
+            if (attackCooldown <= 0f)
             {
-                enemyAnimation.SetBool("stageAttack", true);
-                enemyAnimation.SetFloat("LoopAttack",3f);
+                enemyAnimation.SetBool("stageAttack", false);
+                enemyAnimation.SetBool("IsAttack", true);
+
+
+                Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
+
+
+                attackCooldown = 3f / attackSpeed;
+
             }
-            else
+            if (bossHpBar != null)
             {
-                if (attackCooldown <= 0f)
+                if (currentHp <= 100)
                 {
-                    enemyAnimation.SetBool("stageAttack", false);
-                    enemyAnimation.SetBool("IsAttack", true);
-
-
-                    Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
-
-
-                    attackCooldown = 3f / attackSpeed;
-
-
-
+                    enemyAnimation.SetBool("stageAttack", true);
+                    enemyAnimation.SetFloat("LoopAttack", 3f);
                 }
             }
-           
-
-         } 
+          
+        } 
 
     }
 

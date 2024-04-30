@@ -461,6 +461,7 @@ MonoBehaviour:
   expToLevelUp: 100
   expIncreaseFactor: 2
   playerController: {fileID: 0}
+  _fade: {fileID: 0}
 --- !u!4 &166734966
 Transform:
   m_ObjectHideFlags: 0
@@ -6502,7 +6503,7 @@ MonoBehaviour:
       - m_Target: {fileID: 166734965}
         m_TargetAssemblyTypeName: HUD_Manager, Assembly-CSharp
         m_MethodName: GoToLobby
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

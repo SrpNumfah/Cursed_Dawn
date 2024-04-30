@@ -9,9 +9,10 @@ public class LoadSceneManager : MonoBehaviour
     [Header("FadeInANDout")]
     public Animator animator;
 
-    
+   
     public void FADE()
     {
+        animator.enabled = true;
         animator.SetTrigger("FadeOut");
     }
 
