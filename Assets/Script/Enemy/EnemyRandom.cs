@@ -12,7 +12,7 @@ public class EnemyRandom : MonoBehaviour
 
     private void Start()
     {
-        enemyCount = Random.Range(5, 10);
+        enemyCount = Random.Range(3, 6);
         SpawnEnemy(enemyCount);
        
     }
