@@ -109,6 +109,7 @@ public class EnemyController : MonoBehaviour
          
             Vector3 lookPos = new Vector3(25,0,0);
             transform.eulerAngles = lookPos;
+            Vector3 lookDir = agent.velocity.normalized;
 
             if (agent.velocity.normalized.x > 0)
             {
@@ -122,6 +123,8 @@ public class EnemyController : MonoBehaviour
                 transform.localScale = scale;
             }
 
+            Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.time);
            
         }
     
