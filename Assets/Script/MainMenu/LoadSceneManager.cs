@@ -12,7 +12,7 @@ public class LoadSceneManager : MonoBehaviour
    
     public void FADE()
     {
-        animator.enabled = true;
+       
         animator.SetTrigger("FadeOut");
     }
 
