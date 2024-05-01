@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     [Header("Boss Only")]
     public Slider bossHpBar;
     [SerializeField] EnemyRandom enemyRandom;
+    
 
 
 
@@ -32,6 +33,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Ref")]
     public ParticleSystem portal;
+   
     Transform target;
     [SerializeField] NavMeshAgent agent;
    
@@ -48,8 +50,12 @@ public class EnemyController : MonoBehaviour
         if (bossHpBar != null)
         {
             enemyRandom.enabled = false;
+
         }
 
+        
+
+       
         if (portal != null)
         {
             portal.Play();
@@ -107,8 +113,8 @@ public class EnemyController : MonoBehaviour
                 enemyAnimation.SetBool("stageAttack", false);
             }
          
-            Vector3 lookPos = new Vector3(25,0,0);
-            transform.eulerAngles = lookPos;
+             Vector3 lookPos = new Vector3(25,0,0);
+             transform.eulerAngles = lookPos;
             Vector3 lookDir = agent.velocity.normalized;
 
             if (agent.velocity.normalized.x > 0)
@@ -186,26 +192,41 @@ public class EnemyController : MonoBehaviour
 
         // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี
 
+
        
 
         if (currentHp <= 0)
         {
             OnGoblinDie();
-            
+            if (bossHpBar != null)
+            {
+                bossHpBar.value = 0;
+                bossHpBar.gameObject.SetActive(false);
+                enemyRandom.enabled = false;
+
+            }
+           
         }
+
 
     }
 
     void OnGoblinDie()
     {
+        
+       
         Debug.Log("Goblin ตุยเย่วาตานาเบ้ไอโกะ");
         // ใส่ Particle or Animation ตอนตาย
         // ตีต่อไม่ได้แล้ว ให้มันเป็นศพละเราไปเหยียบซ้ำ
         GetComponent<Collider>().enabled = false; 
         this.enabled = false;
 
+       
+        
 
         //  rune.Spawner();
+
+       
 
         HUD_Manager hud = FindObjectOfType<HUD_Manager>();
 
@@ -217,6 +238,8 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+    
 
     private void OnDrawGizmosSelected()
     {

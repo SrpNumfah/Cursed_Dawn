@@ -4951,7 +4951,7 @@ MonoBehaviour:
   hud: {fileID: 0}
   speed: 20
   walkDust: {fileID: 1576972345057606474}
-  attackSpeed: 0
+  attackSpeed: 0.5
   attackRange: 1.25
   attackDamage: 5
   attackPoint: {fileID: 2926957699563049699}
