@@ -4960,6 +4960,8 @@ MonoBehaviour:
     m_Bits: 8
   maxHealth: 50
   healingHp: 15
+  takingDamageColor: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
+  playerSprite: {fileID: 0}
   shield: {fileID: 5315822261017259409}
   isShieldActive: 0
   blockText: {fileID: 4226394108719145573}

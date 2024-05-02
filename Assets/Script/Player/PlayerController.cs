@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 50;
     public float healingHp = 15;
 
+    [Header("GetDamage")]
+    public Color takingDamageColor;
+    [SerializeField] SpriteRenderer playerSprite;
+
     [Header("Skill Sheild")]
     public ParticleSystem shield;
     public bool isShieldActive = false;
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
         hud = FindObjectOfType<HUD_Manager>();
         merchants = FindObjectOfType<Merchants>();
         maxHealth = PlayerData.instance.maxHealth;
@@ -130,11 +135,12 @@ public class PlayerController : MonoBehaviour
         public void Health(int damage)
         {
        
-       
             if (!isShieldActive)
             {
-               
+            
                 PlayerData.instance.maxHealth -= damage;
+                playerSprite.color = takingDamageColor;
+
                 Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
             }
             else
