@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public float healingHp = 15;
 
     [Header("GetDamage")]
-    public Color takingDamageColor;
+   
     [SerializeField] SpriteRenderer playerSprite;
 
     [Header("Skill Sheild")]
@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
             {
             
                 PlayerData.instance.maxHealth -= damage;
-                playerSprite.color = takingDamageColor;
+            playerSprite.color = Color.red;
+                StartCoroutine(ChangeColorWhenTakingDamage());
 
                 Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
             }
@@ -152,6 +153,15 @@ public class PlayerController : MonoBehaviour
             hud.Hpslider(PlayerData.instance.maxHealth);
 
         }
+
+    IEnumerator ChangeColorWhenTakingDamage()
+    {
+       
+            yield return new WaitForSeconds(0.2f);
+            playerSprite.color = Color.white;
+        
+        
+    }
 
         #endregion
 
