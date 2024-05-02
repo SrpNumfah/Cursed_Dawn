@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Ref")]
     public ParticleSystem portal;
-   
+    [SerializeField] SpriteRenderer enemySprite;
     Transform target;
     [SerializeField] NavMeshAgent agent;
    
@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        enemySprite = GetComponent<SpriteRenderer>();
 
         enemyRandom = FindObjectOfType<EnemyRandom>();
         if (bossHpBar != null)
@@ -77,15 +78,20 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        EnemyFollow();
+    }
+    #region EnemyFollow
+    public void EnemyFollow()
+    {
         if (bossHpBar != null)
         {
             bossHpBar.value = currentHp;
-           
+
         }
         float distance = Vector3.Distance(target.position, transform.position);
 
         enemyAnimation.SetBool("idle", true);
-        
+
 
 
         if (distance <= lookRadius)
@@ -95,16 +101,16 @@ public class EnemyController : MonoBehaviour
 
             enemyAnimation.SetBool("idle", false);
             enemyAnimation.SetBool("IsRun", true);
-            
-          
+
+
             agent.isStopped = false;
             agent.SetDestination(target.position);
-           
+
             if (distance <= attackRadius)
             {
-               
+
                 AttackPlayer();
-                
+
 
             }
             else
@@ -112,9 +118,9 @@ public class EnemyController : MonoBehaviour
                 enemyAnimation.SetBool("IsAttack", false);
                 enemyAnimation.SetBool("stageAttack", false);
             }
-         
-             Vector3 lookPos = new Vector3(25,0,0);
-             transform.eulerAngles = lookPos;
+
+            Vector3 lookPos = new Vector3(25, 0, 0);
+            transform.eulerAngles = lookPos;
             Vector3 lookDir = agent.velocity.normalized;
 
             if (agent.velocity.normalized.x > 0)
@@ -131,9 +137,9 @@ public class EnemyController : MonoBehaviour
 
             Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.time);
-           
+
         }
-    
+
         else
         {
             agent.isStopped = true;
@@ -141,9 +147,9 @@ public class EnemyController : MonoBehaviour
 
         }
     }
+    #endregion
 
- 
-
+    #region DamageToPlayer
     public void AttackPlayer()
     {
        
@@ -179,17 +185,18 @@ public class EnemyController : MonoBehaviour
 
     }
 
-   
-    
-    
-   
-    
+
+    #endregion
+
+
+    #region OnEnemyTakeDamage
 
     public void TakeDamage(int damage)
     {
         
         currentHp -= damage;
-
+        enemySprite.color = Color.red;
+        StartCoroutine(OnTakingDamageFormPlayer());
         // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี
 
 
@@ -209,6 +216,11 @@ public class EnemyController : MonoBehaviour
         }
 
 
+    }
+    IEnumerator OnTakingDamageFormPlayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        enemySprite.color = Color.white;
     }
 
     void OnGoblinDie()
@@ -239,7 +251,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    
+    #endregion
 
     private void OnDrawGizmosSelected()
     {

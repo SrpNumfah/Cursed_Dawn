@@ -60,13 +60,12 @@ public class PlayerController : MonoBehaviour
         TalkingToNPC();
         hud.OnUsePotion();
        
-        
     }
 
 
     #region MoveMent
     public void MoveMent()
-        {
+    {
 
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
@@ -95,72 +94,71 @@ public class PlayerController : MonoBehaviour
             }
 
             characterController.Move(Physics.gravity * Time.deltaTime);
-        }
-        #endregion
+    }
 
-        #region Attack
-        public void Attack()
+    #endregion
+
+    #region Attack
+    public void Attack()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                animator.SetTrigger("Attack");
-
-                Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
-
-                foreach (Collider enemies in hitEnemy)
-                {
-                    Debug.Log("We hit" + enemies.name + attackDamage);
-
-                    enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
-                
-
-                }
-            }
-
+            animator.SetTrigger("Attack");
         }
 
-        private void OnDrawGizmosSelected()
+    }
+
+    public void TimeToUseAttack()
+    {
+
+        Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
+
+        foreach (Collider enemies in hitEnemy)
         {
-            if (attackPoint == null)
-            {
-                return;
-            }
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            Debug.Log("We hit" + enemies.name + attackDamage);
+
+            enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+
         }
-        #endregion
-
-
-        #region PlayerHealth
-        public void Health(int damage)
+    }
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
         {
-       
-            if (!isShieldActive)
-            {
-            
-                PlayerData.instance.maxHealth -= damage;
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+
+    #endregion
+
+
+    #region PlayerHealth
+    public void Health(int damage)
+    {
+        if (!isShieldActive)
+        {
+            PlayerData.instance.maxHealth -= damage;
             playerSprite.color = Color.red;
-                StartCoroutine(ChangeColorWhenTakingDamage());
-
-                Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
-            }
-            else
-            {
-                Debug.Log("Shield blocked damage!" + damage);
-                BlockingDamage();
-            }
-
-            hud.Hpslider(PlayerData.instance.maxHealth);
-
+            StartCoroutine(ChangeColorWhenTakingDamage());
+            Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
         }
+        else
+        {
+            Debug.Log("Shield blocked damage!" + damage);
+            BlockingDamage();
+        }
+
+        hud.Hpslider(PlayerData.instance.maxHealth);
+
+    }
 
     IEnumerator ChangeColorWhenTakingDamage()
     {
-       
-            yield return new WaitForSeconds(0.2f);
-            playerSprite.color = Color.white;
-        
-        
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = Color.white;
     }
 
         #endregion
