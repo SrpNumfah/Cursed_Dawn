@@ -1027,8 +1027,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.1936827, y: 11.034726, z: 1.3114777}
-  m_Center: {x: 1.0837469, y: 0, z: -0.10601139}
+  m_Size: {x: 7.1936827, y: 11.034726, z: 4.1069775}
+  m_Center: {x: 1.0837469, y: 0, z: -0.30180645}
 --- !u!195 &701083872
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1077,8 +1077,9 @@ MonoBehaviour:
   bossHpBar: {fileID: 2107790018}
   enemyRandom: {fileID: 0}
   portal: {fileID: 0}
-  deathParticle: {fileID: 4593184485746916060}
+  enemySprite: {fileID: 0}
   agent: {fileID: 0}
+  death: {fileID: 4593184485746916060}
 --- !u!114 &701083874
 MonoBehaviour:
   m_ObjectHideFlags: 0

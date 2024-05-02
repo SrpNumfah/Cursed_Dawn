@@ -4689,7 +4689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2926957699563049696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.54, y: -0.86, z: 0}
+  m_LocalPosition: {x: -3.06, y: -0.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4952,7 +4952,7 @@ MonoBehaviour:
   speed: 20
   walkDust: {fileID: 1576972345057606474}
   attackSpeed: 0.5
-  attackRange: 1.25
+  attackRange: 2.42
   attackDamage: 5
   attackPoint: {fileID: 2926957699563049699}
   enemy:
@@ -4960,7 +4960,6 @@ MonoBehaviour:
     m_Bits: 8
   maxHealth: 50
   healingHp: 15
-  takingDamageColor: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
   playerSprite: {fileID: 0}
   shield: {fileID: 5315822261017259409}
   isShieldActive: 0

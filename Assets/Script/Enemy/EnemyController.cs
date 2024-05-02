@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] SpriteRenderer enemySprite;
     Transform target;
     [SerializeField] NavMeshAgent agent;
+    public ParticleSystem death;
    
    
    // [SerializeField] RuneSpawner rune;
@@ -209,7 +210,7 @@ public class EnemyController : MonoBehaviour
             {
                 bossHpBar.value = 0;
                 bossHpBar.gameObject.SetActive(false);
-                enemyRandom.enabled = false;
+               
 
             }
            
@@ -246,9 +247,22 @@ public class EnemyController : MonoBehaviour
         {
             hud.GainExpFromEnemy(10);
         }
+        StartCoroutine(DeathEffectForBoss());
+       
 
+    }
+
+    IEnumerator DeathEffectForBoss()
+    {
+        if (death != null)
+        {
+            death.Play();
+            enemySprite.enabled = false;
+            yield return new WaitForSeconds(1.5f);
+           
+        }
+      
         Destroy(gameObject);
-
     }
 
     #endregion
