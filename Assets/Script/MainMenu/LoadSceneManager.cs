@@ -22,6 +22,7 @@ public class LoadSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Map1");
        
+
     }
 
 
