@@ -26,7 +26,7 @@ public class RandomScene : MonoBehaviour
 
         
         StartCoroutine(SceneRandom());
-
+        
 
 
     }
@@ -68,7 +68,7 @@ public class RandomScene : MonoBehaviour
 
 
         animator.SetTrigger("fadeOut");
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0.1f);
         OnRandom();
 
     }
