@@ -617,7 +617,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+  currentHealth: 0
   attackDamage: 0
+  rune: 0
+  currentPotion: 0
+  currentExp: 0
+  currentLevel: 0
   loadedScenes: 
 --- !u!4 &445815214
 Transform:

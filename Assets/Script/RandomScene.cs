@@ -8,11 +8,10 @@ public class RandomScene : MonoBehaviour
     public int sceneCount = 0;
     public int maxScene = 5;
 
-
+    public Animator animator;
     
 
-    [Header("FadeInANDout")]
-    public Animator animator;
+    
 
     public void NextScene()
     {
@@ -25,7 +24,7 @@ public class RandomScene : MonoBehaviour
     public void OnRandom()
     {
 
-
+        
         StartCoroutine(SceneRandom());
 
 
@@ -34,6 +33,7 @@ public class RandomScene : MonoBehaviour
 
     IEnumerator SceneRandom()
     {
+        animator.SetTrigger("fadeIn");
         int index;
         do
         {
@@ -54,7 +54,8 @@ public class RandomScene : MonoBehaviour
 
     private void Start()
     {
-       
+      
+
         sceneCount = PlayerPrefs.GetInt("scene", 1);
     }
 
@@ -64,15 +65,17 @@ public class RandomScene : MonoBehaviour
    
     IEnumerator TimeToFade()
     {
-        animator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(0.5f);
+
+
+        animator.SetTrigger("fadeOut");
+        yield return new WaitForSeconds(0f);
         OnRandom();
 
     }
     IEnumerator FadeToBoss()
     {
-        animator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(0.5f);
+        animator.SetTrigger("fadeOut");
+        yield return new WaitForSeconds(0.1f);
         NextScene();
     }
 
@@ -82,13 +85,14 @@ public class RandomScene : MonoBehaviour
     {
         if (other.CompareTag("Player") && sceneCount < maxScene)
         {
+           
             StartCoroutine(TimeToFade());
 
 
         }
         else
         {
-
+           
             StartCoroutine(FadeToBoss());
         }
     }

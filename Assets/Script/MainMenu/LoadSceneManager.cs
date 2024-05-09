@@ -5,20 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneManager : MonoBehaviour
 {
-    
-    [Header("FadeInANDout")]
     public Animator animator;
 
-   
-    public void FADE()
+    private void Start()
     {
-       
-        animator.SetTrigger("FadeOut");
+        
+    }
+
+
+    public void FadeOut()
+    {
+        animator.SetTrigger("fadeOut");
     }
 
     public void Map1()
     {
         SceneManager.LoadScene("Map1");
+       
     }
 
 

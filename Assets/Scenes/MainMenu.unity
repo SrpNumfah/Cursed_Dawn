@@ -1211,7 +1211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1982515288}
         m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
-        m_MethodName: FADE
+        m_MethodName: FadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2189,11 +2189,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 740887214937736510, guid: a6df9830c24b2904eac0b9a35c767017,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 740887215093652738, guid: a6df9830c24b2904eac0b9a35c767017,
         type: 3}

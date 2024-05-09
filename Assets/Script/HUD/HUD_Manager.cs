@@ -41,7 +41,7 @@ public class HUD_Manager : MonoBehaviour
 
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
-    [SerializeField] Animator _fade;
+    
 
     private void Start()
     {
@@ -54,9 +54,7 @@ public class HUD_Manager : MonoBehaviour
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
 
-        GameObject fade = GameObject.Find("LoadScene");
-        Animator fade_anim = _fade;
-        _fade = fade.GetComponent<Animator>();
+        
 
         currentExp = PlayerData.instance.currentExp;
         currentLevel = PlayerData.instance.currentLevel;
@@ -162,10 +160,23 @@ public class HUD_Manager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPause = true;
     }
+    public void GoToLobby()
+    {
+        
+        SceneManager.LoadScene("MainMenu");
+        
+
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+       
+        Debug.Log("Quit");
+    }
     #endregion
 
     #region EXP
-    
+
 
     public void GainExpFromEnemy(int amount)
     {
@@ -198,18 +209,5 @@ public class HUD_Manager : MonoBehaviour
 
     #endregion
 
-    #region Scene_PauseMenu
-    public void GoToLobby()
-    {
-        SceneManager.LoadScene("MainMenu");
-        _fade.SetTrigger("FadeOut");
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-        _fade.SetTrigger("FadeOut");
-        Debug.Log("Quit");
-    }
-    #endregion 
+    
 }
