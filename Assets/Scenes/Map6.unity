@@ -1080,6 +1080,7 @@ MonoBehaviour:
   enemySprite: {fileID: 0}
   agent: {fileID: 0}
   death: {fileID: 4593184485746916060}
+  boss_hpBar: {fileID: 814522013}
 --- !u!114 &701083874
 MonoBehaviour:
   m_ObjectHideFlags: 0

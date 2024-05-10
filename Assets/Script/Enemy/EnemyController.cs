@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
     Transform target;
     [SerializeField] NavMeshAgent agent;
     public ParticleSystem death;
+    public GameObject boss_hpBar;
    
    
    // [SerializeField] RuneSpawner rune;
@@ -55,7 +56,10 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        
+        if (boss_hpBar != null)
+        {
+            boss_hpBar.SetActive(true);
+        }
 
        
         if (portal != null)
@@ -209,8 +213,8 @@ public class EnemyController : MonoBehaviour
             if (bossHpBar != null)
             {
                 bossHpBar.value = 0;
-                bossHpBar.gameObject.SetActive(false);
-               
+                boss_hpBar.SetActive(false);
+
 
             }
            
@@ -259,9 +263,11 @@ public class EnemyController : MonoBehaviour
             death.Play();
             enemySprite.enabled = false;
             yield return new WaitForSeconds(1.5f);
-           
+            
+
         }
-      
+
+       
         Destroy(gameObject);
     }
 

@@ -15,7 +15,7 @@ public class RandomScene : MonoBehaviour
 
     public void NextScene()
     {
-
+        animator.SetTrigger("fadeIn");
         SceneManager.LoadScene(6);
 
 
@@ -75,7 +75,7 @@ public class RandomScene : MonoBehaviour
     IEnumerator FadeToBoss()
     {
         animator.SetTrigger("fadeOut");
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0f);
         NextScene();
     }
 

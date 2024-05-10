@@ -32,7 +32,8 @@ public class EnemyRandom : MonoBehaviour
 
            
             continue;
-        }
+        } 
+        
 
     }
 
