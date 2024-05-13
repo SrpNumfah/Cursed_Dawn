@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     public ParticleSystem death;
     public GameObject boss_hpBar;
-   
+    
    
    // [SerializeField] RuneSpawner rune;
 
@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour
             boss_hpBar.SetActive(true);
         }
 
+      
        
         if (portal != null)
         {
@@ -202,7 +203,7 @@ public class EnemyController : MonoBehaviour
         currentHp -= damage;
         enemySprite.color = Color.red;
         StartCoroutine(OnTakingDamageFormPlayer());
-        // เผื่อใส่ อนิเมชั่นตอนโดนตี หรือเปลี่ยนสี
+       
 
 
        
@@ -267,7 +268,6 @@ public class EnemyController : MonoBehaviour
 
         }
 
-       
         Destroy(gameObject);
     }
 
