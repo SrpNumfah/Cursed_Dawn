@@ -11,14 +11,17 @@ public class Merchants : MonoBehaviour
     public CinemachineVirtualCamera targetGroup;
    
     [SerializeField] NPC npc;
-    [SerializeField] PlayerController playerController;
+    
 
     [Header("UI")]
     public GameObject TalkBtn;
 
+    [Header("price")]
+    public int price;
+
     private void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+       
         merChantAnim = GetComponent<Animator>();
         npc = GetComponent<NPC>();
         TalkBtn.SetActive(false);
@@ -55,5 +58,18 @@ public class Merchants : MonoBehaviour
         targetGroup.gameObject.SetActive(true);
         npc.TriggerDialogue();
         merChantAnim.SetBool("IsTriggerPlayer", true);
+    }
+
+    public void OnUpgarde(int damageIncrease)
+    {
+       // damageIncrease += PlayerData.instance.attackDamage;
+        FindObjectOfType<PlayerController>().PlayerUpgradeDamage(damageIncrease);
+    }
+    public void UpgradeDamage(int prices)
+    {
+        OnUpgarde(10);
+        price = PlayerData.instance.rune - prices;
+        Debug.Log(PlayerData.instance.rune + price);
+        
     }
 }

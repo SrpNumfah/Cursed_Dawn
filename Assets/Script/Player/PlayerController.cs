@@ -136,6 +136,11 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    public void PlayerUpgradeDamage(int damageIncrease)
+    {
+        PlayerData.instance.attackDamage += damageIncrease;
+    }
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
