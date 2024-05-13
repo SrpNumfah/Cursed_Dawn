@@ -221,6 +221,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             merchants.TalkingToPlayer();
+            
         }
     }
     #endregion

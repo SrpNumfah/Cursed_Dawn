@@ -16,10 +16,12 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    [SerializeField] PlayerController playerController;
+
     private void Start()
     {
         sentences = new Queue<string>();
-        
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -28,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         name_text.text = dialogue.name;
         dialogue_Anim.SetBool("IsOpen", true);
         Debug.Log(dialogue.name);
-
+        playerController.enabled = false;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -58,6 +60,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogue_Anim.SetBool("IsOpen", false);
         dialogueCam.gameObject.SetActive(false);
+        playerController.enabled = true;
        
     }
 }

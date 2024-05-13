@@ -11,12 +11,14 @@ public class Merchants : MonoBehaviour
     public CinemachineVirtualCamera targetGroup;
    
     [SerializeField] NPC npc;
+    [SerializeField] PlayerController playerController;
 
     [Header("UI")]
     public GameObject TalkBtn;
 
     private void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         merChantAnim = GetComponent<Animator>();
         npc = GetComponent<NPC>();
         TalkBtn.SetActive(false);
@@ -31,7 +33,7 @@ public class Merchants : MonoBehaviour
         {
 
             TalkBtn.SetActive(true);
-
+            
 
         }
     }
