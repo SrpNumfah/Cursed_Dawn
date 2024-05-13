@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float attackSpeed;
     public float attackRange = 0.5f;
     public int attackDamage = 5;
+    public AudioSource attackSound;
    
     public Transform attackPoint;
     public LayerMask enemy;
@@ -32,10 +33,10 @@ public class PlayerController : MonoBehaviour
    [Header("Health")]
     public float maxHealth = 50;
     public float healingHp = 15;
-
-    [Header("GetDamage")]
    
+    [Header("GetDamage")]
     [SerializeField] SpriteRenderer playerSprite;
+    public AudioSource Ondamage;
 
     [Header("Skill Sheild")]
     public ParticleSystem shield;
@@ -116,6 +117,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void PlayAttackSound()
+    {
+        attackSound.Play();
+    }
+   
+
     public void TimeToUseAttack()
     {
 
@@ -148,8 +155,9 @@ public class PlayerController : MonoBehaviour
         if (!isShieldActive)
         {
             PlayerData.instance.maxHealth -= damage;
+            Ondamage.Play();
             playerSprite.color = Color.red;
-            
+           
             StartCoroutine(ChangeColorWhenTakingDamage());
             Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
         }

@@ -21,6 +21,7 @@ public class HUD_Manager : MonoBehaviour
     public Sprite emptyPotion;
     private const int healthToAddPerPotion = 10;
     [SerializeField] ParticleSystem healEffect;
+    public AudioSource heal;
 
     [Header("Pause_Menu")]
     public GameObject pauseMenuPanel;
@@ -108,7 +109,7 @@ public class HUD_Manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
            this.healEffect.Play();
-           
+            heal.Play();
             
             if (PlayerData.instance.currentPotion < potions.Length)
             {
