@@ -105,9 +105,10 @@ public class HUD_Manager : MonoBehaviour
 
     public void OnUsePotion()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            healEffect.Play();
+           this.healEffect.Play();
+           
             
             if (PlayerData.instance.currentPotion < potions.Length)
             {

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Move")]
     public float speed = 6f;
     public ParticleSystem walkDust;
-
+    public AudioSource footStep;
     
 
     [Header("Attack")]
@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 animator.SetTrigger("Isrun");
+               
                 walkDust.Play();
                 characterController.Move(direction * speed * Time.deltaTime);
 
@@ -96,6 +97,11 @@ public class PlayerController : MonoBehaviour
             characterController.Move(Physics.gravity * Time.deltaTime);
     }
 
+    public void FootStepSound()
+    {
+        footStep.Play();
+    }
+
     #endregion
 
     #region Attack
@@ -105,6 +111,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Attack");
+            
         }
 
     }
@@ -142,6 +149,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerData.instance.maxHealth -= damage;
             playerSprite.color = Color.red;
+            
             StartCoroutine(ChangeColorWhenTakingDamage());
             Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
         }

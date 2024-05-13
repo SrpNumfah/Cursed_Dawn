@@ -168,7 +168,7 @@ public class EnemyController : MonoBehaviour
             {
                 enemyAnimation.SetBool("stageAttack", false);
                 enemyAnimation.SetBool("IsAttack", true);
-
+               
 
                 Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
 
@@ -202,6 +202,7 @@ public class EnemyController : MonoBehaviour
         
         currentHp -= damage;
         enemySprite.color = Color.red;
+       
         StartCoroutine(OnTakingDamageFormPlayer());
        
 
