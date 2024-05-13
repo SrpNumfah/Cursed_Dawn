@@ -162,9 +162,11 @@ public class PlayerController : MonoBehaviour
             PlayerData.instance.maxHealth -= damage;
             Ondamage.Play();
             playerSprite.color = Color.red;
-           
+
+          
             StartCoroutine(ChangeColorWhenTakingDamage());
             Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
+
         }
         else
         {

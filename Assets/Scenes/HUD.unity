@@ -621,6 +621,7 @@ MonoBehaviour:
   currentExp: 0
   expToLevelUp: 100
   expIncreaseFactor: 2
+  deathUI: {fileID: 31876192}
   playerController: {fileID: 0}
 --- !u!4 &166734966
 Transform:
@@ -7913,6 +7914,7 @@ MonoBehaviour:
   dialogue_UI: {fileID: 804854645}
   dialogue_Anim: {fileID: 804854649}
   dialogueCam: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1892532880
 GameObject:
   m_ObjectHideFlags: 0

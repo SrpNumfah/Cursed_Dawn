@@ -37,8 +37,9 @@ public class HUD_Manager : MonoBehaviour
     public int expToLevelUp = 100;
     public int expIncreaseFactor = 2;
 
-   
 
+    [Header("DeathScene")]
+    public GameObject deathUI;
 
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
@@ -76,6 +77,12 @@ public class HUD_Manager : MonoBehaviour
         slider.value = value;
         hpText.text = value.ToString() + "/50";
         Debug.Log(slider.value);
+
+        if (slider.value <= 0)
+        {
+            PlayerDeath();
+            Pause();
+        }
 
         
     }
@@ -211,5 +218,15 @@ public class HUD_Manager : MonoBehaviour
 
     #endregion
 
-    
+    #region DeathScene
+    public void PlayerDeath()
+    {
+        deathUI.SetActive(true);
+    }
+
+    public void Respawn()
+    {
+
+    }
+    #endregion
 }
