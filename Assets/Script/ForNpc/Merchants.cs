@@ -16,8 +16,7 @@ public class Merchants : MonoBehaviour
     [Header("UI")]
     public GameObject TalkBtn;
 
-    [Header("price")]
-    public int price;
+   
 
     private void Start()
     {
@@ -62,14 +61,33 @@ public class Merchants : MonoBehaviour
 
     public void OnUpgarde(int damageIncrease)
     {
-       // damageIncrease += PlayerData.instance.attackDamage;
+      
         FindObjectOfType<PlayerController>().PlayerUpgradeDamage(damageIncrease);
     }
     public void UpgradeDamage(int prices)
     {
-        OnUpgarde(10);
-        price = PlayerData.instance.rune - prices;
-        Debug.Log(PlayerData.instance.rune + price);
+        if (PlayerData.instance.rune > prices)
+        {
+            OnUpgarde(10);
+            PlayerData.instance.rune -= prices;
+            Debug.Log(PlayerData.instance.rune);
+            FindObjectOfType<HUD_Manager>().OnUpdateRune();
+        }
+        else
+        {
+            // เพิ่ม ประโยคว่า ไปหา rune เพิ่ม
+        }
+       
+    }
+
+    public void BuyPotion(int price)
+    {
+        if (PlayerData.instance.rune > price)
+        {
+            PlayerData.instance.rune -= price;
+            FindObjectOfType<HUD_Manager>().OnUpdatePotionUI();
+            Debug.Log(PlayerData.instance.rune);
+        }
         
     }
 }
