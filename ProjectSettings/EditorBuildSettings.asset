@@ -9,22 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: df4da2d252a6c6d4b86dcaef5f553956
   - enabled: 1
-    path: Assets/Scenes/Map1.unity
+    path: Assets/Scenes/Map_village/Map1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Map2.unity
+    path: Assets/Scenes/Map_village/Map2.unity
     guid: 59a00a453612ce64693fadec9bc6a36e
   - enabled: 1
-    path: Assets/Scenes/Map3.unity
+    path: Assets/Scenes/Map_village/Map3.unity
     guid: db8d905b40730204d9f56e3fd27687e5
   - enabled: 1
-    path: Assets/Scenes/Map4.unity
+    path: Assets/Scenes/Map_village/Map4.unity
     guid: 45118f7f0196313458db93bbf72972c3
   - enabled: 1
-    path: Assets/Scenes/Map5.unity
+    path: Assets/Scenes/Map_village/Map5.unity
     guid: bfc19579582c75b408afe6a59479c36e
   - enabled: 1
-    path: Assets/Scenes/Map6.unity
+    path: Assets/Scenes/Map_village/Map6.unity
     guid: 192046d6026c790418a9447f73ecd8dd
   - enabled: 1
     path: Assets/Scenes/HUD.unity
