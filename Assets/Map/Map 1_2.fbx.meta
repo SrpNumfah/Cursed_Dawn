@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: 4a5d25051b75a1b42993e441417fed0f
+guid: 53bc736c1eb9f4e49bfe417058dab6e6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grass Bush-08
-    second: {fileID: 2800000, guid: eba10ccc4756d7044a26d2f43391f814, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grass Bush-09
-    second: {fileID: 2800000, guid: 24fb4757d4f60d94d9597d83798fc5e1, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grass Bush-11
-    second: {fileID: 2800000, guid: a9ef870761374e846ab45555032871cf, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grass Bush-12
-    second: {fileID: 2800000, guid: 02d286e7304303a48863e9d30a753c88, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Tree1
-    second: {fileID: 2800000, guid: 78296728cc4a1b84b8f58e1387e03b3c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Tree5
-    second: {fileID: 2800000, guid: 8769cd76008b6144ebf3c5fd6a4e0417, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: ground 2
-    second: {fileID: 2800000, guid: 599d71ebe75373a47919fb001a1facce, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: road lights
-    second: {fileID: 2800000, guid: 4d87302822e89214796dd8a72e203062, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
