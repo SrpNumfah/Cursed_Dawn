@@ -52,6 +52,7 @@ public class HUD_Manager : MonoBehaviour
         OnUpdatePotionUI();
         currentPotion = PlayerData.instance.currentPotion;
 
+      
         GameObject heal = GameObject.Find("Healing");
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
@@ -107,6 +108,8 @@ public class HUD_Manager : MonoBehaviour
             else
             {
                 potions[i].sprite = fullPotion;
+                
+                
             }
         }
     }

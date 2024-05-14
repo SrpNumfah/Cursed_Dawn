@@ -61,7 +61,6 @@ public class Merchants : MonoBehaviour
 
     public void OnUpgarde(int damageIncrease)
     {
-      
         FindObjectOfType<PlayerController>().PlayerUpgradeDamage(damageIncrease);
     }
     public void UpgradeDamage(int prices)
@@ -85,6 +84,7 @@ public class Merchants : MonoBehaviour
         if (PlayerData.instance.rune > price)
         {
             PlayerData.instance.rune -= price;
+           // PlayerData.instance.currentPotion++;
             FindObjectOfType<HUD_Manager>().OnUpdatePotionUI();
             Debug.Log(PlayerData.instance.rune);
         }
