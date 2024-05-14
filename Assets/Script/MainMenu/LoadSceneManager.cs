@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadSceneManager : MonoBehaviour
 {
     public Animator animator;
-
+    public AudioSource click;
     private void Start()
     {
         
@@ -15,6 +15,7 @@ public class LoadSceneManager : MonoBehaviour
 
     public void FadeOut()
     {
+        click.Play();
         animator.SetTrigger("fadeOut");
     }
 
@@ -29,6 +30,7 @@ public class LoadSceneManager : MonoBehaviour
 
     public void LeaveGame()
     {
+        click.Play();
         Application.Quit();
         Debug.Log("LeaveGame");
     }
