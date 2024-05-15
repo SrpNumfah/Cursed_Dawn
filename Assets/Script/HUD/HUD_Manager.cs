@@ -128,8 +128,15 @@ public class HUD_Manager : MonoBehaviour
                     PlayerData.instance.maxHealth += healthToAddPerPotion;
                     PlayerData.instance.currentPotion++;
                     OnUpdatePotionUI();
-                    Hpslider(PlayerData.instance.maxHealth);
+                  
                     Debug.Log(healthToAddPerPotion);
+
+                    if (PlayerData.instance.maxHealth > PlayerData.instance.currentHealth)
+                    {
+                        PlayerData.instance.maxHealth = PlayerData.instance.currentHealth;
+                    }
+
+                    Hpslider(PlayerData.instance.maxHealth);
                 }
                 else
                 {
@@ -174,7 +181,7 @@ public class HUD_Manager : MonoBehaviour
     }
     public void GoToLobby()
     {
-       
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
         
 

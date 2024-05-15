@@ -81,11 +81,12 @@ public class Merchants : MonoBehaviour
 
     public void BuyPotion(int price)
     {
-        if (PlayerData.instance.rune > price)
+        if (PlayerData.instance.rune >= price && PlayerData.instance.currentPotion > 0)
         {
             PlayerData.instance.rune -= price;
-           // PlayerData.instance.currentPotion++;
+            PlayerData.instance.currentPotion--;
             FindObjectOfType<HUD_Manager>().OnUpdatePotionUI();
+            FindObjectOfType<HUD_Manager>().OnUpdateRune();
             Debug.Log(PlayerData.instance.rune);
         }
         
