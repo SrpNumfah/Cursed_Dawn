@@ -125,24 +125,35 @@ public class EnemyController : MonoBehaviour
                 enemyAnimation.SetBool("stageAttack", false);
             }
 
-            Vector3 lookPos = new Vector3(25, 0, 0);
-            transform.eulerAngles = lookPos;
-            Vector3 lookDir = agent.velocity.normalized;
+            // Vector3 lookPos = new Vector3(25, 0, 0);
+            // transform.eulerAngles = lookPos;
+            // Vector3 lookDir = agent.velocity.normalized;
 
-            if (agent.velocity.normalized.x > 0)
+            //  if (agent.velocity.normalized.x > 0)
+            //  {
+            //  Vector3 scale = new Vector3(-2, 2, 2);
+            //  transform.localScale = scale;
+            //  }
+
+            //  if (agent.velocity.normalized.x < 0)
+            //  {
+            //    Vector3 scale = new Vector3(2, 2, 2);
+            //  transform.localScale = scale;
+            //  }
+
+
+            Vector3 isFlip = (target.position - transform.position).normalized;
+            if (isFlip.x > 0)
             {
-                Vector3 scale = new Vector3(-2, 2, 2);
-                transform.localScale = scale;
+                enemySprite.flipX = false;
+            } 
+            else if (isFlip.y < 0)
+            {
+                enemySprite.flipX = true;
             }
 
-            if (agent.velocity.normalized.x < 0)
-            {
-                Vector3 scale = new Vector3(2, 2, 2);
-                transform.localScale = scale;
-            }
-
-            Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.time);
+           // Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
+          //  transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.time);
 
         }
 
