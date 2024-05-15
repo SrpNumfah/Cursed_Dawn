@@ -54,8 +54,8 @@ public class RandomScene : MonoBehaviour
 
     private void Start()
     {
-      
 
+        
         sceneCount = PlayerPrefs.GetInt("scene", 1);
     }
 

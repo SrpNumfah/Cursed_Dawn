@@ -883,6 +883,7 @@ GameObject:
   - component: {fileID: 1443995640}
   - component: {fileID: 1443995642}
   - component: {fileID: 1443995643}
+  - component: {fileID: 1443995644}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -946,6 +947,24 @@ MonoBehaviour:
   - {fileID: 616936633}
   - {fileID: 1566129877}
   enemyCount: 0
+--- !u!114 &1443995644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443995639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479d140e293a76a49ac849113b683dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runePrefabs: {fileID: 3266621968783396211, guid: 22cded27c63da664cb66f3a75dc2deda,
+    type: 3}
+  xPos: 0
+  zPos: 0
+  runesCount: 0
+  goblin: {fileID: 864050351564449194, guid: f3df13285254b6f4e888f2fa35b160f5, type: 3}
 --- !u!1 &1502130666
 GameObject:
   m_ObjectHideFlags: 0

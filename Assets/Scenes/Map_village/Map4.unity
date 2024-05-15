@@ -924,6 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440061258}
   - component: {fileID: 440061257}
+  - component: {fileID: 440061259}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -961,6 +962,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440061259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440061256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479d140e293a76a49ac849113b683dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runePrefabs: {fileID: 3266621968783396211, guid: 22cded27c63da664cb66f3a75dc2deda,
+    type: 3}
+  xPos: 0
+  zPos: 0
+  runesCount: 0
 --- !u!1 &445815212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,7 +3711,7 @@ PrefabInstance:
     - target: {fileID: 1820504521404832697, guid: 018792c45d2770244a74238ddc86f481,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -116
+      value: -66.3
       objectReference: {fileID: 0}
     - target: {fileID: 1820504521404832697, guid: 018792c45d2770244a74238ddc86f481,
         type: 3}

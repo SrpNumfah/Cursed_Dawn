@@ -9,6 +9,8 @@ public class SpawnRune : MonoBehaviour
     public int zPos;
     public int runesCount;
 
+    
+
     private void Start()
     {
         StartCoroutine(RandomRunesPosition());
@@ -17,14 +19,20 @@ public class SpawnRune : MonoBehaviour
 
     IEnumerator RandomRunesPosition()
     {
-        while (runesCount < 5)
+        while (runesCount < 10)
         {
-            xPos = Random.Range(1, -30);
-            zPos = Random.Range(1, -36);
+            xPos = Random.Range(64, -60);
+            zPos = Random.Range(30, -44);
             Instantiate(runePrefabs, new Vector3(xPos, 3.79f, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0f);
             runesCount += 1;
         }
 
+    }
+
+    public void RuneDrop(int dropCount)
+    {
+       
+        Instantiate(runePrefabs, new Vector3(xPos,3.79f, zPos), Quaternion.identity);
     }
 }

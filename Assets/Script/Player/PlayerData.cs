@@ -23,7 +23,7 @@ public class PlayerData : MonoBehaviour
             maxHealth = 50;
             attackDamage = 5;
             currentHealth = maxHealth;
-
+            
 
 
             PlayerPrefs.DeleteAll();

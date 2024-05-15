@@ -980,6 +980,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   death: {fileID: 4593184485746916060}
   boss_hpBar: {fileID: 814522013}
+  rune: {fileID: 0}
 --- !u!114 &701083874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1539,6 +1540,7 @@ GameObject:
   - component: {fileID: 1638269739}
   - component: {fileID: 1638269738}
   - component: {fileID: 1638269741}
+  - component: {fileID: 1638269742}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1615,6 +1617,23 @@ MonoBehaviour:
   - {fileID: 1662392559}
   - {fileID: 1762121787}
   enemyCount: 0
+--- !u!114 &1638269742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638269737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479d140e293a76a49ac849113b683dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runePrefabs: {fileID: 3266621968783396211, guid: 22cded27c63da664cb66f3a75dc2deda,
+    type: 3}
+  xPos: 0
+  zPos: 0
+  runesCount: 0
 --- !u!1 &1653997539
 GameObject:
   m_ObjectHideFlags: 0

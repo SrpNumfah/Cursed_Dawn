@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     public GameObject boss_hpBar;
     
    
-   // [SerializeField] RuneSpawner rune;
+    [SerializeField] SpawnRune rune;
 
 
     private void Start()
@@ -67,13 +67,12 @@ public class EnemyController : MonoBehaviour
             portal.Play();
         }
         
-       // rune = GameObject.FindObjectOfType<RuneSpawner>();
+      
         agent.stoppingDistance = attackRadius; 
 
         currentHp = maxHp;
 
-
-
+        rune = FindObjectOfType<SpawnRune>();
         attackPoint.gameObject.SetActive(false);
 
        
@@ -230,15 +229,13 @@ public class EnemyController : MonoBehaviour
         
        
         Debug.Log("Goblin ตุยเย่วาตานาเบ้ไอโกะ");
-        // ใส่ Particle or Animation ตอนตาย
-        // ตีต่อไม่ได้แล้ว ให้มันเป็นศพละเราไปเหยียบซ้ำ
         GetComponent<Collider>().enabled = false; 
         this.enabled = false;
 
-       
-        
 
-        //  rune.Spawner();
+
+
+        rune.RuneDrop(5);
 
        
 

@@ -9,7 +9,7 @@ public class LoadSceneManager : MonoBehaviour
     public AudioSource click;
     private void Start()
     {
-        
+        PlayerPrefs.DeleteAll();
     }
 
 
