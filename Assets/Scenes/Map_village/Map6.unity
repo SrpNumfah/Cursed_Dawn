@@ -109,7 +109,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 30
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -937,8 +937,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 701083865}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.9
-  m_Speed: 10
+  m_Radius: 1.61
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

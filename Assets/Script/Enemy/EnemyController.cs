@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour
     public float attackCooldown = 0f;
     public Transform attackPoint;
     public Animator enemyAnimation;
-    bool canAttack = true;
     public LayerMask playerLayer;
     
     [Header("Boss Only")]
@@ -125,21 +124,7 @@ public class EnemyController : MonoBehaviour
                 enemyAnimation.SetBool("stageAttack", false);
             }
 
-            // Vector3 lookPos = new Vector3(25, 0, 0);
-            // transform.eulerAngles = lookPos;
-            // Vector3 lookDir = agent.velocity.normalized;
-
-            //  if (agent.velocity.normalized.x > 0)
-            //  {
-            //  Vector3 scale = new Vector3(-2, 2, 2);
-            //  transform.localScale = scale;
-            //  }
-
-            //  if (agent.velocity.normalized.x < 0)
-            //  {
-            //    Vector3 scale = new Vector3(2, 2, 2);
-            //  transform.localScale = scale;
-            //  }
+            
 
 
             Vector3 isFlip = (target.position - transform.position).normalized;
@@ -152,8 +137,7 @@ public class EnemyController : MonoBehaviour
                 enemySprite.flipX = true;
             }
 
-           // Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
-          //  transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.time);
+           
 
         }
 
