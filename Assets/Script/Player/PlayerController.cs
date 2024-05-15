@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     [SerializeField] Merchants merchants;
     [SerializeField] HUD_Manager hud;
-    
+   
   
     
    
@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        
         playerSprite = GetComponent<SpriteRenderer>();
         hud = FindObjectOfType<HUD_Manager>();
         merchants = FindObjectOfType<Merchants>();
@@ -104,6 +105,9 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+    
+
 
     #region Attack
     public void Attack()

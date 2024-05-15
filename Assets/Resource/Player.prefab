@@ -5155,6 +5155,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414014b8b7a4ba146940fb7497c24b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  characterController: {fileID: 0}
+  attackSpeed: 0
+  attackRange: 0.5
+  attackDamage: 5
+  attackPoint: {fileID: 2926957699563049699}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &4226394108719145573
 GameObject:
   m_ObjectHideFlags: 0

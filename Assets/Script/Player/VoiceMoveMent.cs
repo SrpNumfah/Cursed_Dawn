@@ -10,17 +10,29 @@ public class VoiceMoveMent : MonoBehaviour
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
-    public float moveSpeed = 1.0f;
-    public float turnSpeed = 50.0f;
+    [Header("MoveMent")]
+    public float speed = 6f;
+    [SerializeField] CharacterController characterController;
+    
+
+    [Header("Attack")]
+    public float attackSpeed;
+    public float attackRange = 0.5f;
+    public int attackDamage = 5;
+    public Transform attackPoint;
+    public LayerMask enemy;
 
     private void Start()
     {
+        characterController = GetComponent<CharacterController>();
+
         actions.Add("walk", Walk);
         actions.Add("turnleft", TurnLeft);
         actions.Add("turnright", TurnRight);
         actions.Add("back", Back);
-        // actions.Add("attack", Attack);
+        actions.Add("attack", Attack);
 
+       
 
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizVoice;
@@ -33,24 +45,62 @@ public class VoiceMoveMent : MonoBehaviour
         actions[speece.text].Invoke();
     }
 
+    
     private void Walk()
     {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        MoveByVoice(new Vector3(0, 0, -20));
     }
-
+    private void Back()
+    {
+        MoveByVoice(new Vector3(0, 0, 20));
+    }
     private void TurnLeft()
     {
-        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+        MoveByVoice(new Vector3(20, 0, 0));
     }
 
     private void TurnRight()
     {
-        transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
+        MoveByVoice(new Vector3(-20, 0, 0));
     }
 
-    private void Back()
+   
+   public void MoveByVoice(Vector3 direction)
     {
-        transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+        if (direction.magnitude >= 0.1f)
+        {
+            characterController.Move(direction * speed * Time.deltaTime);
+
+
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            } 
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+        }
+        else
+        {
+            // animator.SetTrigger("Isrun");
+            // walkDust.Stop();
+        }
+
+        characterController.Move(Physics.gravity * Time.deltaTime);
+    }
+
+    private void Attack()
+    {
+        Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
+
+        foreach (Collider enemies in hitEnemy)
+        {
+            Debug.Log("We hit" + enemies.name + attackDamage);
+
+            enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+
+        }
     }
 
 }
