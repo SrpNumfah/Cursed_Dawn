@@ -141,6 +141,8 @@ public class HUD_Manager : MonoBehaviour
                 else
                 {
                     Debug.Log("Health is already full!");
+                    heal.Stop();
+                    healEffect.Stop();
                 }
                 
             }
