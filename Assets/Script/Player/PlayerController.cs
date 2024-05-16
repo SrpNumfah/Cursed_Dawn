@@ -38,10 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer playerSprite;
     public AudioSource Ondamage;
 
-    [Header("Skill Sheild")]
-    public ParticleSystem shield;
-    public bool isShieldActive = false;
-    public GameObject blockText;
+   
 
     private void Start()
     {
@@ -58,7 +55,6 @@ public class PlayerController : MonoBehaviour
     {
         MoveMent();
         Attack();
-        ActivedSheild();
         TalkingToNPC();
         hud.OnUsePotion();
        
@@ -161,8 +157,7 @@ public class PlayerController : MonoBehaviour
     #region PlayerHealth
     public void Health(int damage)
     {
-        if (!isShieldActive)
-        {
+       
             PlayerData.instance.maxHealth -= damage;
             Ondamage.Play();
             playerSprite.color = Color.red;
@@ -171,13 +166,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ChangeColorWhenTakingDamage());
             Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
 
-        }
-        else
-        {
-            Debug.Log("Shield blocked damage!" + damage);
-            BlockingDamage();
-        }
-
+       
         hud.Hpslider(PlayerData.instance.maxHealth);
 
     }
@@ -191,40 +180,7 @@ public class PlayerController : MonoBehaviour
         #endregion
 
 
-        #region Shield_Skill
-        public void ActivedSheild()
-        {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                isShieldActive = true;
-                shield.Play();
-                StartCoroutine(DeactivateShieldAfterDelay());
-            }
-
-        }
-        public void BlockingDamage()
-        {
-
-            blockText.SetActive(true);
-            StartCoroutine(TextPopUp());
-
-        }
-
-        IEnumerator DeactivateShieldAfterDelay()
-        {
-            yield return new WaitForSeconds(10f);
-            isShieldActive = false;
-            shield.Stop();
-        }
-
-        IEnumerator TextPopUp()
-        {
-            yield return new WaitForSeconds(0.5f);
-            blockText.SetActive(false);
-        }
-
-
-    #endregion
+       
 
     #region TalkWithNpc
     public void TalkingToNPC()
