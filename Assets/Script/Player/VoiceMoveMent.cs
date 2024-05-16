@@ -21,6 +21,7 @@ public class VoiceMoveMent : MonoBehaviour
     public int attackDamage = 5;
     public Transform attackPoint;
     public LayerMask enemy;
+    public Animator voiceAnim;
 
     private void Start()
     {
@@ -92,15 +93,7 @@ public class VoiceMoveMent : MonoBehaviour
 
     private void Attack()
     {
-        Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
-
-        foreach (Collider enemies in hitEnemy)
-        {
-            Debug.Log("We hit" + enemies.name + attackDamage);
-
-            enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
-
-        }
+        voiceAnim.SetTrigger("Attack");
     }
 
 }

@@ -5157,13 +5157,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   characterController: {fileID: 0}
-  attackSpeed: 0
+  attackSpeed: 1
   attackRange: 0.5
   attackDamage: 5
   attackPoint: {fileID: 2926957699563049699}
   enemy:
     serializedVersion: 2
     m_Bits: 8
+  voiceAnim: {fileID: 7213458862945185329}
 --- !u!1 &4226394108719145573
 GameObject:
   m_ObjectHideFlags: 0
