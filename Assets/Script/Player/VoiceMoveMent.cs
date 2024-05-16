@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Windows.Speech;
-using UnityEngine.UI;
+
 
 public class VoiceMoveMent : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class VoiceMoveMent : MonoBehaviour
     [Header("MoveMent")]
     public float speed = 6f;
     [SerializeField] CharacterController characterController;
+    
     
 
     [Header("Attack")]
@@ -33,8 +34,8 @@ public class VoiceMoveMent : MonoBehaviour
        // hud_Manager = FindObjectOfType<HUD_Manager>();
 
         actions.Add("walk", Walk);
-        actions.Add("turnleft", TurnLeft);
-        actions.Add("turnright", TurnRight);
+        actions.Add("left", TurnLeft);
+        actions.Add("right", TurnRight);
         actions.Add("back", Back);
         actions.Add("attack", Attack);
         actions.Add("healing", Healing);
@@ -63,12 +64,12 @@ public class VoiceMoveMent : MonoBehaviour
     }
     private void TurnLeft()
     {
-        MoveByVoice(new Vector3(20, 0, 0));
+        MoveByVoice(new Vector3(-20, 0, 0));
     }
 
     private void TurnRight()
     {
-        MoveByVoice(new Vector3(-20, 0, 0));
+        MoveByVoice(new Vector3(20, 0, 0));
     }
 
    
@@ -90,7 +91,7 @@ public class VoiceMoveMent : MonoBehaviour
         }
         else
         {
-            // animator.SetTrigger("Isrun");
+             voiceAnim.SetTrigger("Isrun");
             // walkDust.Stop();
         }
 
