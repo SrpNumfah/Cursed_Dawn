@@ -1011,8 +1011,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   attackDamage: 0
-  rune: 0
-  currentPotion: 0
+  rune: 500
+  currentPotion: 3
   currentExp: 0
   currentLevel: 0
   loadedScenes: 

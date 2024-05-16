@@ -9,6 +9,7 @@ public class Merchants : MonoBehaviour
     [Header("Refference")]
     private Animator merChantAnim;
     public CinemachineVirtualCamera targetGroup;
+    [SerializeField] ParticleSystem buff;
    
     [SerializeField] NPC npc;
     
@@ -25,6 +26,12 @@ public class Merchants : MonoBehaviour
         npc = GetComponent<NPC>();
         TalkBtn.SetActive(false);
         targetGroup.gameObject.SetActive(false);
+
+
+        GameObject particle = GameObject.Find("Buff");
+        ParticleSystem particleSystem = buff;
+        buff = particle.GetComponent<ParticleSystem>();
+
     }
 
    
@@ -71,10 +78,12 @@ public class Merchants : MonoBehaviour
             PlayerData.instance.rune -= prices;
             Debug.Log(PlayerData.instance.rune);
             FindObjectOfType<HUD_Manager>().OnUpdateRune();
+            buff.Play();
         }
         else
         {
             // เพิ่ม ประโยคว่า ไปหา rune เพิ่ม
+            buff.Stop();
         }
        
     }

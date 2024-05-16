@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Windows.Speech;
+using UnityEngine.UI;
 
 public class VoiceMoveMent : MonoBehaviour
 {
@@ -23,15 +24,20 @@ public class VoiceMoveMent : MonoBehaviour
     public LayerMask enemy;
     public Animator voiceAnim;
 
+    
+  //  [SerializeField] HUD_Manager hud_Manager;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+       // hud_Manager = FindObjectOfType<HUD_Manager>();
 
         actions.Add("walk", Walk);
         actions.Add("turnleft", TurnLeft);
         actions.Add("turnright", TurnRight);
         actions.Add("back", Back);
         actions.Add("attack", Attack);
+        actions.Add("healing", Healing);
 
        
 
@@ -94,6 +100,11 @@ public class VoiceMoveMent : MonoBehaviour
     private void Attack()
     {
         voiceAnim.SetTrigger("Attack");
+    }
+
+    private void Healing()
+    {
+       
     }
 
 }
