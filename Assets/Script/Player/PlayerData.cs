@@ -23,6 +23,7 @@ public class PlayerData : MonoBehaviour
             maxHealth = 50;
             attackDamage = 5;
             currentHealth = 50;
+            rune = 100;
 
             
 
