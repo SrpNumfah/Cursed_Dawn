@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
    [Header("Health")]
     public float maxHealth = 50;
+    public float currentHealth;
     public float healingHp = 15;
    
     [Header("GetDamage")]
@@ -46,9 +47,11 @@ public class PlayerController : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         hud = FindObjectOfType<HUD_Manager>();
         merchants = FindObjectOfType<Merchants>();
+        currentHealth = maxHealth;
+        currentHealth = PlayerData.instance.currentHealth;
         maxHealth = PlayerData.instance.maxHealth;
         attackDamage = PlayerData.instance.attackDamage;
-        hud.Hpslider(PlayerData.instance.maxHealth);
+        hud.Hpslider();
     }
 
     void Update()
@@ -158,16 +161,16 @@ public class PlayerController : MonoBehaviour
     public void Health(int damage)
     {
        
-            PlayerData.instance.maxHealth -= damage;
+            PlayerData.instance.currentHealth -= damage;
             Ondamage.Play();
             playerSprite.color = Color.red;
 
           
             StartCoroutine(ChangeColorWhenTakingDamage());
-            Debug.Log("Health" + PlayerData.instance.maxHealth.ToString());
+            Debug.Log("Health" + PlayerData.instance.currentHealth.ToString());
 
        
-        hud.Hpslider(PlayerData.instance.maxHealth);
+        hud.Hpslider();
 
     }
 

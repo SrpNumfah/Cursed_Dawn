@@ -9,7 +9,7 @@ using TMPro;
 public class SettingMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public TMP_Dropdown resolutionDropdown;
+   
 
     
 
@@ -22,7 +22,6 @@ public class SettingMenu : MonoBehaviour
     private void Start()
     {
         resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
         qualityDropdown.value = PlayerPrefs.GetInt("QualityLevel", QualitySettings.GetQualityLevel());
 
         List<string> options = new List<string>();
@@ -39,9 +38,7 @@ public class SettingMenu : MonoBehaviour
             }
 
         }
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionsIndex;
-        resolutionDropdown.RefreshShownValue();
+        
     }
 
     public void SetResolution(int resolutionIndex)

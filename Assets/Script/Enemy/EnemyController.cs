@@ -23,6 +23,8 @@ public class EnemyController : MonoBehaviour
     [Header("Boss Only")]
     public Slider bossHpBar;
     [SerializeField] EnemyRandom enemyRandom;
+    public GameObject doorTrigger;
+    
     
 
 
@@ -90,6 +92,7 @@ public class EnemyController : MonoBehaviour
         if (bossHpBar != null)
         {
             bossHpBar.value = currentHp;
+            doorTrigger.SetActive(false);
 
         }
         float distance = Vector3.Distance(target.position, transform.position);
@@ -210,6 +213,7 @@ public class EnemyController : MonoBehaviour
             {
                 bossHpBar.value = 0;
                 boss_hpBar.SetActive(false);
+                doorTrigger.SetActive(true);
 
 
             }

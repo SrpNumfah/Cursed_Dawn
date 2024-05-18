@@ -4965,8 +4965,9 @@ GameObject:
   - component: {fileID: 7213458862945185326}
   - component: {fileID: 7213458862945185322}
   - component: {fileID: 7213458862945185321}
+  - component: {fileID: 1182890344750159959}
   m_Layer: 6
-  m_Name: Player
+  m_Name: For voice
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5066,7 +5067,7 @@ Animator:
   m_GameObject: {fileID: 2926957700476118908}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6956fa0c91c63c49b34f881d0cfb905, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e3d1556d0fedd5489e45c48a89b46cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5139,6 +5140,28 @@ MonoBehaviour:
   healingHp: 15
   playerSprite: {fileID: 0}
   Ondamage: {fileID: 1656455750491024628}
+--- !u!114 &1182890344750159959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926957700476118908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414014b8b7a4ba146940fb7497c24b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 60
+  characterController: {fileID: 0}
+  attackSpeed: 0.1
+  attackRange: 0.5
+  attackDamage: 5
+  attackPoint: {fileID: 2926957699563049699}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 8
+  voiceAnim: {fileID: 7213458862945185329}
 --- !u!1 &6980373436828171397
 GameObject:
   m_ObjectHideFlags: 0

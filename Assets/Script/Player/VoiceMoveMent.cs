@@ -37,7 +37,7 @@ public class VoiceMoveMent : MonoBehaviour
         actions.Add("left", TurnLeft);
         actions.Add("right", TurnRight);
         actions.Add("back", Back);
-        actions.Add("attack", Attack);
+        actions.Add("fight", Attack);
         actions.Add("healing", Healing);
 
        
@@ -56,11 +56,11 @@ public class VoiceMoveMent : MonoBehaviour
     
     private void Walk()
     {
-        MoveByVoice(new Vector3(0, 0, -20));
+        MoveByVoice(new Vector3(0, 0, 20));
     }
     private void Back()
     {
-        MoveByVoice(new Vector3(0, 0, 20));
+        MoveByVoice(new Vector3(0, 0, -20));
     }
     private void TurnLeft()
     {

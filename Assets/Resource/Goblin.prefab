@@ -149,11 +149,13 @@ MonoBehaviour:
     m_Bits: 64
   bossHpBar: {fileID: 0}
   enemyRandom: {fileID: 0}
+  doorTrigger: {fileID: 0}
   portal: {fileID: 2931690130552933573}
   enemySprite: {fileID: 0}
   agent: {fileID: 0}
   death: {fileID: 0}
   boss_hpBar: {fileID: 0}
+  rune: {fileID: 0}
 --- !u!65 &864050351564449192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 864050352894818370}
-  enemyDamage: 1
+  enemyDamage: 5
 --- !u!114 &5702418930730627816
 MonoBehaviour:
   m_ObjectHideFlags: 0

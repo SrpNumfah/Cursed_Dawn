@@ -72,11 +72,11 @@ public class HUD_Manager : MonoBehaviour
     }
 
     #region HpSlider
-    public void Hpslider(float value)
+    public void Hpslider()
     {
 
-        slider.value = value;
-        hpText.text = value.ToString() + "/50";
+        slider.value = PlayerData.instance.currentHealth;
+        hpText.text = PlayerData.instance.currentHealth.ToString() + "/50";
         Debug.Log(slider.value);
 
         if (slider.value <= 0)
@@ -123,20 +123,20 @@ public class HUD_Manager : MonoBehaviour
             
             if (PlayerData.instance.currentPotion < potions.Length)
             {
-                if (PlayerData.instance.maxHealth < PlayerData.instance.currentHealth)
+                if (PlayerData.instance.currentHealth < PlayerData.instance.maxHealth)
                 {
-                    PlayerData.instance.maxHealth += healthToAddPerPotion;
+                    PlayerData.instance.currentHealth += healthToAddPerPotion;
                     PlayerData.instance.currentPotion++;
                     OnUpdatePotionUI();
                   
                     Debug.Log(healthToAddPerPotion);
 
-                    if (PlayerData.instance.maxHealth > PlayerData.instance.currentHealth)
+                    if (PlayerData.instance.currentHealth > PlayerData.instance.maxHealth)
                     {
-                        PlayerData.instance.maxHealth = PlayerData.instance.currentHealth;
+                        playerController.currentHealth = PlayerData.instance.maxHealth;
                     }
 
-                    Hpslider(PlayerData.instance.maxHealth);
+                    Hpslider();
                 }
                 else
                 {
@@ -185,7 +185,13 @@ public class HUD_Manager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        PlayerData.instance.currentHealth = 50;
+        PlayerData.instance.currentLevel = 0;
+        PlayerData.instance.currentExp = 0;
         
+
+
+
 
     }
     public void ExitGame()
@@ -238,6 +244,13 @@ public class HUD_Manager : MonoBehaviour
 
     public void Respawn()
     {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+        PlayerData.instance.currentHealth = (int)playerController.maxHealth;
+        PlayerData.instance.currentLevel = 0;
+        PlayerData.instance.currentExp = 0;
+       
+
 
     }
     #endregion

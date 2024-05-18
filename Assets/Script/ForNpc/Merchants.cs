@@ -16,6 +16,7 @@ public class Merchants : MonoBehaviour
 
     [Header("UI")]
     public GameObject TalkBtn;
+    
 
    
 

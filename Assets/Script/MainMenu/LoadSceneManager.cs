@@ -7,12 +7,15 @@ public class LoadSceneManager : MonoBehaviour
 {
     public Animator animator;
     public AudioSource click;
+
+    
+
     private void Start()
     {
         PlayerPrefs.DeleteAll();
     }
 
-
+    
     public void FadeOut()
     {
         click.Play();
@@ -22,8 +25,15 @@ public class LoadSceneManager : MonoBehaviour
     public void Map1()
     {
         SceneManager.LoadScene("Map1");
-       
+        PlayerData.instance.loadedScenes = new List<int>();
 
+
+    }
+
+    public void VoiceDemo()
+    {
+        click.Play();
+        SceneManager.LoadScene("voice");
     }
 
 
