@@ -139,7 +139,7 @@ MonoBehaviour:
   maxHp: 50
   currentHp: 0
   lookRadius: 25.18
-  attackRadius: 4.4
+  attackRadius: 11.43
   attackSpeed: 1
   attackCooldown: 0
   attackPoint: {fileID: 864050352894818370}
@@ -150,6 +150,7 @@ MonoBehaviour:
   bossHpBar: {fileID: 0}
   enemyRandom: {fileID: 0}
   doorTrigger: {fileID: 0}
+  doorNoTrigger: {fileID: 0}
   portal: {fileID: 2931690130552933573}
   enemySprite: {fileID: 0}
   agent: {fileID: 0}

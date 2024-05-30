@@ -3,7 +3,67 @@ guid: d16e1a348a5118d4e88cf8e1d38f226f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2800000, guid: d934f5d807880044ebff886d07eea351, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plane 2
+    second: {fileID: 2800000, guid: d386b022eade32246b3e485f55d9fa17, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plane 3
+    second: {fileID: 2800000, guid: 43d0d94286c446f4a8e0717207c1843d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: table
+    second: {fileID: 2800000, guid: 7dc426f98a871b64bbab34becdb061b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2800000, guid: 6850d84cdbceb644fa2aea60dcbda60d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall 2
+    second: {fileID: 2800000, guid: 54c403db65e90424ea16a2172d44703b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall 3
+    second: {fileID: 2800000, guid: 9202c9afa1adc4f478f2f3b2a34a6f2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall light
+    second: {fileID: 2800000, guid: 435bb3073ca02ba4383e7e2a13d39e55, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u0E14\u0E32\u0E1A"
+    second: {fileID: 2800000, guid: 3592e761e5da82e4893b3adb01d00ccf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u0E1C\u0E49\u0E32\u0E21\u0E48\u0E32\u0E19"
+    second: {fileID: 2800000, guid: c0586a191985d8a4692148be5498a0ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u0E42\u0E25\u0E48"
+    second: {fileID: 2800000, guid: f4e0723e713c6924e9106db743ebfcfb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u0E44\u0E21\u0E49\u0E01\u0E27\u0E32\u0E14"
+    second: {fileID: 2800000, guid: bdfdc05e5f42cd14f8e77793d02ba953, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - Sheild
   - Merchant
+  - Obstruction
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Player
   - foreground
   - Healing
-  - 
+  - Obstruction
   - 
   - 
   - 

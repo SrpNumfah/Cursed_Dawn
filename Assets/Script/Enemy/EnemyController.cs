@@ -24,13 +24,8 @@ public class EnemyController : MonoBehaviour
     public Slider bossHpBar;
     [SerializeField] EnemyRandom enemyRandom;
     public GameObject doorTrigger;
+    public GameObject doorNoTrigger;
     
-    
-
-
-
-
-
 
     [Header("Ref")]
     public ParticleSystem portal;
@@ -54,22 +49,15 @@ public class EnemyController : MonoBehaviour
         if (bossHpBar != null)
         {
             enemyRandom.enabled = false;
-
         }
-
         if (boss_hpBar != null)
         {
             boss_hpBar.SetActive(true);
         }
-
-      
-       
         if (portal != null)
         {
             portal.Play();
         }
-        
-      
         agent.stoppingDistance = attackRadius; 
 
         currentHp = maxHp;
@@ -93,41 +81,28 @@ public class EnemyController : MonoBehaviour
         {
             bossHpBar.value = currentHp;
             doorTrigger.SetActive(false);
-
         }
         float distance = Vector3.Distance(target.position, transform.position);
 
-        enemyAnimation.SetBool("idle", true);
-
-
+         enemyAnimation.SetBool("idle", true);
 
         if (distance <= lookRadius)
         {
             attackCooldown -= Time.deltaTime;
-
-
             enemyAnimation.SetBool("idle", false);
             enemyAnimation.SetBool("IsRun", true);
-
-
             agent.isStopped = false;
             agent.SetDestination(target.position);
 
             if (distance <= attackRadius)
             {
-
                 AttackPlayer();
-
-
             }
             else
             {
                 enemyAnimation.SetBool("IsAttack", false);
                 enemyAnimation.SetBool("stageAttack", false);
             }
-
-            
-
 
             Vector3 isFlip = (target.position - transform.position).normalized;
             if (isFlip.x > 0)
@@ -138,16 +113,11 @@ public class EnemyController : MonoBehaviour
             {
                 enemySprite.flipX = true;
             }
-
-           
-
         }
-
         else
         {
             agent.isStopped = true;
             enemyAnimation.SetBool("IsRun", false);
-
         }
     }
     #endregion
@@ -155,23 +125,16 @@ public class EnemyController : MonoBehaviour
     #region DamageToPlayer
     public void AttackPlayer()
     {
-       
          PlayerController playerController = target.GetComponent<PlayerController>();
 
         if (playerController != null)
         {
-
             if (attackCooldown <= 0f)
             {
                 enemyAnimation.SetBool("stageAttack", false);
                 enemyAnimation.SetBool("IsAttack", true);
-               
-
                 Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
-
-
                 attackCooldown = 3f / attackSpeed;
-
             }
             if (bossHpBar != null)
             {
@@ -180,7 +143,6 @@ public class EnemyController : MonoBehaviour
                     enemyAnimation.SetBool("stageAttack", true);
                     enemyAnimation.SetFloat("LoopAttack", 3f);
                     enemyRandom.enabled = true;
-                   
                 }
             }
           
@@ -196,16 +158,9 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        
         currentHp -= damage;
         enemySprite.color = Color.red;
-       
         StartCoroutine(OnTakingDamageFormPlayer());
-       
-
-
-       
-
         if (currentHp <= 0)
         {
             OnGoblinDie();
@@ -214,13 +169,8 @@ public class EnemyController : MonoBehaviour
                 bossHpBar.value = 0;
                 boss_hpBar.SetActive(false);
                 doorTrigger.SetActive(true);
-
-
             }
-           
         }
-
-
     }
     IEnumerator OnTakingDamageFormPlayer()
     {
@@ -230,19 +180,10 @@ public class EnemyController : MonoBehaviour
 
     void OnGoblinDie()
     {
-        
-       
         Debug.Log("Goblin µØÂàÂèÇÒµÒ¹ÒàºéäÍâ¡Ð");
         GetComponent<Collider>().enabled = false; 
         this.enabled = false;
-
-
-
-
         rune.RuneDrop(5);
-
-       
-
         HUD_Manager hud = FindObjectOfType<HUD_Manager>();
 
         if (hud != null)
@@ -260,6 +201,7 @@ public class EnemyController : MonoBehaviour
         {
             death.Play();
             enemySprite.enabled = false;
+            doorNoTrigger.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             
 

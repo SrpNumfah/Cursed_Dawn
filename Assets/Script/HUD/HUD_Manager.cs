@@ -189,10 +189,6 @@ public class HUD_Manager : MonoBehaviour
         PlayerData.instance.currentLevel = 0;
         PlayerData.instance.currentExp = 0;
         
-
-
-
-
     }
     public void ExitGame()
     {
@@ -249,9 +245,6 @@ public class HUD_Manager : MonoBehaviour
         PlayerData.instance.currentHealth = (int)playerController.maxHealth;
         PlayerData.instance.currentLevel = 0;
         PlayerData.instance.currentExp = 0;
-       
-
-
     }
     #endregion
 }
