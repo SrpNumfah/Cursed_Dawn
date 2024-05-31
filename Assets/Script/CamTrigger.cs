@@ -5,26 +5,30 @@ using UnityEngine;
 public class CamTrigger : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
-    private Color originalColor;
+    private Color color;
+
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        originalColor = meshRenderer.material.color;
+        color = meshRenderer.material.color;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Obstruction")
+        if (other.tag == "Player")
         {
-            Color transparentColor = originalColor;
+            Color transparentColor = color;
             transparentColor.a = 0f;
             meshRenderer.material.color = transparentColor;
+            Debug.Log("Player entered, object is now transparent.");
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Obstruction")
+        if (other.tag == "Player")
         {
-            meshRenderer.material.color = originalColor;
+            meshRenderer.material.color = color;
+            Debug.Log("Player exited, object color reverted.");
         }
     }
 }

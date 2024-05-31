@@ -65,9 +65,6 @@ public class EnemyController : MonoBehaviour
         rune = FindObjectOfType<SpawnRune>();
         attackPoint.gameObject.SetActive(false);
 
-       
-      
-
     }
 
     private void Update()

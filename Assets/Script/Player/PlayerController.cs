@@ -11,16 +11,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Merchants merchants;
     [SerializeField] HUD_Manager hud;
    
-  
-    
-   
-
     [Header("Move")]
     public float speed = 6f;
     public ParticleSystem walkDust;
     public AudioSource footStep;
     
-
     [Header("Attack")]
     public float attackSpeed;
     public float attackRange = 0.5f;
@@ -39,11 +34,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer playerSprite;
     public AudioSource Ondamage;
 
-   
+    [Header("Skill")]
+    public ParticleSystem shield;
 
     private void Start()
     {
-        
         playerSprite = GetComponent<SpriteRenderer>();
         hud = FindObjectOfType<HUD_Manager>();
         merchants = FindObjectOfType<Merchants>();
@@ -60,14 +55,12 @@ public class PlayerController : MonoBehaviour
         Attack();
         TalkingToNPC();
         hud.OnUsePotion();
-       
     }
 
 
     #region MoveMent
     public void MoveMent()
     {
-
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -105,17 +98,12 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    
-
-
     #region Attack
     public void Attack()
     {
-
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetTrigger("Attack");
-            
         }
 
     }
@@ -124,11 +112,9 @@ public class PlayerController : MonoBehaviour
     {
         attackSound.Play();
     }
-   
 
     public void TimeToUseAttack()
     {
-
         Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange, enemy);
 
         foreach (Collider enemies in hitEnemy)
@@ -139,7 +125,6 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
     public void PlayerUpgradeDamage(int damageIncrease)
     {
         PlayerData.instance.attackDamage += damageIncrease;
@@ -152,26 +137,17 @@ public class PlayerController : MonoBehaviour
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
-
     #endregion
-
 
     #region PlayerHealth
     public void Health(int damage)
     {
-       
-            PlayerData.instance.currentHealth -= damage;
-            Ondamage.Play();
-            playerSprite.color = Color.red;
-
-          
-            StartCoroutine(ChangeColorWhenTakingDamage());
-            Debug.Log("Health" + PlayerData.instance.currentHealth.ToString());
-
-       
+        PlayerData.instance.currentHealth -= damage;
+        Ondamage.Play();
+        playerSprite.color = Color.red;
+        StartCoroutine(ChangeColorWhenTakingDamage());
+        Debug.Log("Health" + PlayerData.instance.currentHealth.ToString());
         hud.Hpslider();
-
     }
 
     IEnumerator ChangeColorWhenTakingDamage()
@@ -179,11 +155,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         playerSprite.color = Color.white;
     }
-
-        #endregion
-
-
-       
+    #endregion
 
     #region TalkWithNpc
     public void TalkingToNPC()
@@ -191,7 +163,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             merchants.TalkingToPlayer();
-            
         }
     }
     #endregion
