@@ -121,7 +121,18 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("We hit" + enemies.name + attackDamage);
 
-            enemies.GetComponent<EnemyController>().TakeDamage(attackDamage);
+            EnemyController enemyController = enemies.GetComponent<EnemyController>();
+            Skeleton skeleton = enemies.GetComponent<Skeleton>();
+
+            if (enemyController != null)
+            {
+                enemyController.TakeDamage(attackDamage);
+            }
+            else if (skeleton != null)
+            {
+                skeleton.TakeDamage(attackDamage);
+            }
+
 
         }
     }

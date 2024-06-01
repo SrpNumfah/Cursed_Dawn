@@ -1,100 +1,95 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class Skeleton : MonoBehaviour
 {
-    [Header("EnemyHealth")]
     public int maxHp = 100;
     public int currentHp;
+    public float detectionRadius = 10f;
+    public float rotationSpeed = 5f;
+    public float throwRate = 1f;
+    public GameObject axePrefab;
+    public Transform throwPoint;
 
-    [Header("EnemyFollow")]
-    public float lookRadius = 10f;
-    public float attackRadius = 2f;
-    public float attackSpeed = 1f;
-    public float attackCooldown = 0f;
-    public Transform attackPoint;
-    
-    public LayerMask playerLayer;
-
-    [Header("Ref")]
     private Transform target;
-    [SerializeField] private SpriteRenderer enemySprite;
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Animator enemyAnimation;
+    private float throwCooldown = 0f;
+    [SerializeField] SpriteRenderer enemySprite;
+    [SerializeField] Animator animator;
+
 
     private void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
         enemySprite = GetComponent<SpriteRenderer>();
-        enemyAnimation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
-        agent.stoppingDistance = attackRadius;
-        currentHp = maxHp;
-        attackPoint.gameObject.SetActive(false);
+        animator.SetBool("idle", true);
     }
-
     private void Update()
     {
-        OnFollowPlayer();
+        DetectTarget();
+        if (target != null)
+        {
+            RotateTowardsTarget();
+            FireAtTarget();
+        }
     }
 
-    #region Private
-    private void OnFollowPlayer()
+    private void DetectTarget()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
-        enemyAnimation.SetBool("idle", true);
-        if (distance <= lookRadius)
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, LayerMask.GetMask("Player"));
+        if (hits.Length > 0)
         {
-            attackCooldown -= Time.deltaTime;
-            enemyAnimation.SetBool("idle", false);
-            enemyAnimation.SetBool("IsRun", true);
-            agent.isStopped = false;
-            agent.SetDestination(target.position);
-
-            if (distance <= attackRadius)
-            {
-                OnAttack();
-            }
-            else
-            {
-                enemyAnimation.SetBool("IsAttack", false);
-            }
-
-            Vector3 isFlip = (target.position - transform.position).normalized;
-            if (isFlip.x > 0)
-            {
-                enemySprite.flipX = false;
-            }
-            else if (isFlip.y < 0)
-            {
-                enemySprite.flipX = true;
-            }
+            animator.SetBool("idle", false);
+            animator.SetBool("IsAttack", true);
+            target = hits[0].transform;
         }
         else
         {
-            agent.isStopped = true;
-            enemyAnimation.SetBool("IsRun", false);
+            target = null;
+            animator.SetBool("IsAttack", false);
+            animator.SetBool("idle", true);
         }
     }
-    private void OnAttack()
-    {
-        PlayerController playerController = target.GetComponent<PlayerController>();
 
-        if (playerController != null)
-        {
-            if (attackCooldown <= 0f)
-            {
-                enemyAnimation.SetBool("IsAttack", true);
-                Collider[] attackPlayer = Physics.OverlapSphere(attackPoint.position, attackRadius, playerLayer);
-                attackCooldown = 3f / attackSpeed;
-            }
-        }
+    private void RotateTowardsTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
-    #endregion
+
+    private void FireAtTarget()
+    {
+        if (throwCooldown <= 0f)
+        {
+            Instantiate(axePrefab, throwPoint.position, throwPoint.rotation);
+            throwCooldown = 1f / throwRate;
+        }
+        throwCooldown -= Time.deltaTime;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHp -= damage;
+        enemySprite.color = Color.red;
+        StartCoroutine(OnTakingDamageFormPlayer());
+    }
+    IEnumerator OnTakingDamageFormPlayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        enemySprite.color = Color.white;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
 }
 
 
