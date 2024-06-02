@@ -5,13 +5,11 @@ using System.Collections;
 public class RandomMap_2 : MonoBehaviour
 {
     public int sceneCount = 0;
-    public int maxScene = 5;
-
-   
+    public int maxScene = 6;
 
     private void Start()
     {
-        sceneCount = PlayerPrefs.GetInt("scene", 1);
+        sceneCount = PlayerPrefs.GetInt("_scene", 1);
     }
 
     public void NextScene()
@@ -28,14 +26,13 @@ public class RandomMap_2 : MonoBehaviour
         int index;
         do
         {
-            index = Random.Range(10, 13);
+            index = Random.Range(10, 14);
             yield return null;
 
         } while (index == SceneManager.GetActiveScene().buildIndex || PlayerData.instance.loadedScenes.Contains(index));
         sceneCount++;
-        PlayerPrefs.SetInt("scene", sceneCount);
+        PlayerPrefs.SetInt("_scene", sceneCount);
         PlayerData.instance.loadedScenes.Add(index);
-
         SceneManager.LoadScene(index);
         Debug.Log(sceneCount + index);
     }
@@ -45,6 +42,10 @@ public class RandomMap_2 : MonoBehaviour
         if (other.tag == ("Player") && sceneCount < maxScene)
         {
             OnRandom();
-        } 
+        }
+        else
+        {
+            NextScene();
+        }
     }
 }

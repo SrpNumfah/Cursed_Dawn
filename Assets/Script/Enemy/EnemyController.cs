@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] EnemyRandom enemyRandom;
     public GameObject doorTrigger;
     public GameObject doorNoTrigger;
+    public Animator door;
+    
     
 
     [Header("Ref")]
@@ -58,6 +60,10 @@ public class EnemyController : MonoBehaviour
         {
             portal.Play();
         }
+        if (door != null)
+        {
+            door.SetBool("isOpen", true);
+        }
         agent.stoppingDistance = attackRadius; 
 
         currentHp = maxHp;
@@ -78,6 +84,7 @@ public class EnemyController : MonoBehaviour
         {
             bossHpBar.value = currentHp;
             doorTrigger.SetActive(false);
+            
         }
         float distance = Vector3.Distance(target.position, transform.position);
 
@@ -166,6 +173,7 @@ public class EnemyController : MonoBehaviour
                 bossHpBar.value = 0;
                 boss_hpBar.SetActive(false);
                 doorTrigger.SetActive(true);
+                door.SetBool("IsOpen", true);
             }
         }
     }
@@ -197,11 +205,10 @@ public class EnemyController : MonoBehaviour
         if (death != null)
         {
             death.Play();
+            
             enemySprite.enabled = false;
             doorNoTrigger.SetActive(false);
             yield return new WaitForSeconds(1.5f);
-            
-
         }
 
         Destroy(gameObject);

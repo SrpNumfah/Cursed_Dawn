@@ -13,7 +13,6 @@ public class PlayerData : MonoBehaviour
     public int currentPotion;
     public int currentExp;
     public int currentLevel;
-
     public List<int> loadedScenes = new List<int>();
 
     private void Awake()
@@ -24,6 +23,7 @@ public class PlayerData : MonoBehaviour
             attackDamage = 5;
             currentHealth = 50;
             rune = 100;
+      
 
             PlayerPrefs.DeleteAll();
 

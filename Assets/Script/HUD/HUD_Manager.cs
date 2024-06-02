@@ -27,19 +27,21 @@ public class HUD_Manager : MonoBehaviour
     public GameObject pauseMenuPanel;
     public static bool GameIsPause = false;
     
-
     [Header("EXP")]
     public Slider expSlider;
     public TMP_Text levelText;
-
     public int currentLevel = 1;
     public int currentExp = 0;
     public int expToLevelUp = 100;
     public int expIncreaseFactor = 2;
 
-
     [Header("DeathScene")]
     public GameObject deathUI;
+
+    [Header("skill cooldown")]
+    public Image skill_1;
+    public float coolDown;
+    
 
     [Header("Reference")]
     [SerializeField] PlayerController playerController;
@@ -58,10 +60,10 @@ public class HUD_Manager : MonoBehaviour
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();
 
-        
-
         currentExp = PlayerData.instance.currentExp;
         currentLevel = PlayerData.instance.currentLevel;
+
+        skill_1.fillAmount = 0;
 
     }
 
@@ -69,6 +71,7 @@ public class HUD_Manager : MonoBehaviour
     {
         OnPauseMenu();
         EXPSlider();
+        SkillCoolDown1();
         
     }
 
@@ -237,6 +240,8 @@ public class HUD_Manager : MonoBehaviour
     public void PlayerDeath()
     {
         deathUI.SetActive(true);
+        
+
     }
 
     public void Respawn()
@@ -246,6 +251,19 @@ public class HUD_Manager : MonoBehaviour
         PlayerData.instance.currentHealth = (int)playerController.maxHealth;
         PlayerData.instance.currentLevel = 0;
         PlayerData.instance.currentExp = 0;
+    }
+    #endregion
+
+    #region skillCooldown
+    public void SkillCoolDown1()
+    {
+          skill_1.fillAmount -= 1 / coolDown * Time.deltaTime;
+
+            if (skill_1.fillAmount <= 0)
+            {
+                skill_1.fillAmount = 0;
+            }
+        
     }
     #endregion
 }

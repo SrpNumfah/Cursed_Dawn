@@ -5,12 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class DoorTrigger : MonoBehaviour
 {
+
+    public Animator animator;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(9);
-            Debug.Log("loadescene");
+            StartCoroutine(FadeTime());
         }
+    }
+
+    IEnumerator FadeTime()
+    {
+        animator.SetTrigger("fadeOut");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(9);
+        PlayerData.instance.loadedScenes = new List<int>();
+        Debug.Log("loadescene");
     }
 }
