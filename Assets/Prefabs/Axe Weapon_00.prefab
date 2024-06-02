@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5358612280113619359}
   - component: {fileID: 5190138346031411298}
+  - component: {fileID: 7424161086773928003}
   - component: {fileID: 2915123190697262971}
   - component: {fileID: 5993210128318827061}
   - component: {fileID: 8906204378259737424}
@@ -119,6 +120,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7424161086773928003
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710027974058732749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4ac1a1af642d674690d5b137c924ab0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &2915123190697262971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -160,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e40192817e9d704ea7769a30fa7808b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   lifeTime: 2
   damage: 5
+  axeAnim: {fileID: 0}

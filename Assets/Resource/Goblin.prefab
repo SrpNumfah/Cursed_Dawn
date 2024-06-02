@@ -139,7 +139,7 @@ MonoBehaviour:
   maxHp: 50
   currentHp: 0
   lookRadius: 25.18
-  attackRadius: 11.43
+  attackRadius: 3.87
   attackSpeed: 1
   attackCooldown: 0
   attackPoint: {fileID: 864050352894818370}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864050352894818373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -0.47, z: 0}
+  m_LocalPosition: {x: -3.43, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -24,10 +24,9 @@ public class LoadSceneManager : MonoBehaviour
 
     public void Map1()
     {
+        
         SceneManager.LoadScene("Map1");
         PlayerData.instance.loadedScenes = new List<int>();
-
-
     }
 
     public void VoiceDemo()

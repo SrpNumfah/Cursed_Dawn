@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: 1470145857}
   - component: {fileID: 1470145856}
   - component: {fileID: 1470145855}
+  - component: {fileID: 1470145860}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1048,6 +1049,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1470145860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470145854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c501534181e51a14fa7eed5688087d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2926957700476118911, guid: a363155b8f7bf2c40b908d5a34f80a06, type: 3}
+  obstructionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  playerRadius: 5
 --- !u!1 &1489207256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,9 +2318,9 @@ GameObject:
   - component: {fileID: 5547241934822316980}
   - component: {fileID: 9168343472263558121}
   - component: {fileID: 9168343472263558122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2461,9 +2479,10 @@ GameObject:
   - component: {fileID: 4067761746857032627}
   - component: {fileID: 4062499990448176878}
   - component: {fileID: 4067761746857032628}
-  m_Layer: 0
+  - component: {fileID: 4067761746857032629}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2649,9 +2668,10 @@ GameObject:
   - component: {fileID: 5723102919078418597}
   - component: {fileID: 8717660497415480993}
   - component: {fileID: 8717660497415480994}
-  m_Layer: 0
+  - component: {fileID: 8717660497415480995}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2974,9 +2994,10 @@ GameObject:
   - component: {fileID: 8626245432007725890}
   - component: {fileID: 5342552929371700619}
   - component: {fileID: 8626245432007725891}
-  m_Layer: 0
+  - component: {fileID: 8626245432007725892}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3092,9 +3113,10 @@ GameObject:
   - component: {fileID: 3445759783469716288}
   - component: {fileID: 1351039355859645352}
   - component: {fileID: 3445759783469716289}
-  m_Layer: 0
+  - component: {fileID: 3445759783469716290}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3295,9 +3317,10 @@ GameObject:
   - component: {fileID: 2089732970736130084}
   - component: {fileID: 8424899556102994533}
   - component: {fileID: 8424899556102994534}
-  m_Layer: 0
+  - component: {fileID: 8424899556102994535}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3356,9 +3379,10 @@ GameObject:
   - component: {fileID: 292816523555442570}
   - component: {fileID: 4992930311785093335}
   - component: {fileID: 6032271449913756605}
-  m_Layer: 0
+  - component: {fileID: 6032271449913756606}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3398,9 +3422,10 @@ GameObject:
   - component: {fileID: 2239382710861886642}
   - component: {fileID: 7585196304284021487}
   - component: {fileID: 7585196304284021488}
-  m_Layer: 0
+  - component: {fileID: 7585196304284021489}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3915,9 +3940,10 @@ GameObject:
   - component: {fileID: 934897366788933526}
   - component: {fileID: 5803989166264263763}
   - component: {fileID: 7649465431580218940}
-  m_Layer: 0
+  - component: {fileID: 7649465431580218941}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4174,9 +4200,10 @@ GameObject:
   - component: {fileID: 5684885232825472617}
   - component: {fileID: 2396776565033638257}
   - component: {fileID: 5684885232825472618}
-  m_Layer: 0
+  - component: {fileID: 5684885232825472619}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4406,9 +4433,10 @@ GameObject:
   - component: {fileID: 1915695548573683430}
   - component: {fileID: 121259555904453849}
   - component: {fileID: 7660582306051300300}
-  m_Layer: 0
+  - component: {fileID: 7660582306051300301}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4645,9 +4673,10 @@ GameObject:
   - component: {fileID: 8597644126070777}
   - component: {fileID: 6985139834369204082}
   - component: {fileID: 9174283112443797883}
-  m_Layer: 0
+  - component: {fileID: 9174283112443797884}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4691,9 +4720,10 @@ GameObject:
   - component: {fileID: 6547956131293507531}
   - component: {fileID: 1611692572953689904}
   - component: {fileID: 6547956131293507532}
-  m_Layer: 0
+  - component: {fileID: 6547956131293507533}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4748,9 +4778,10 @@ GameObject:
   - component: {fileID: 8198962959810718427}
   - component: {fileID: 8935823525122495212}
   - component: {fileID: 8935823525122495213}
-  m_Layer: 0
+  - component: {fileID: 8935823525122495214}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5184,10 +5215,9 @@ GameObject:
   - component: {fileID: 4274041972155033346}
   - component: {fileID: 7938718043153935600}
   - component: {fileID: 7938718043153935601}
-  - component: {fileID: 7938718043153935602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5204,9 +5234,10 @@ GameObject:
   - component: {fileID: 1698805245470094387}
   - component: {fileID: 4618903252054762550}
   - component: {fileID: 4618903252054762551}
-  m_Layer: 0
+  - component: {fileID: 4618903252054762552}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5233,6 +5264,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6138787480799432094, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &3445759783469716290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451765292178961029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2433521113217414110, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &3459588950009900611
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5406,9 +5453,10 @@ GameObject:
   - component: {fileID: 962066865040464775}
   - component: {fileID: 2296671985223798716}
   - component: {fileID: 6294930636754896476}
-  m_Layer: 0
+  - component: {fileID: 6294930636754896477}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5456,9 +5504,10 @@ GameObject:
   - component: {fileID: 318578788317777454}
   - component: {fileID: 3459588950009900611}
   - component: {fileID: 4603753083338594734}
-  m_Layer: 0
+  - component: {fileID: 4603753083338594735}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5546,9 +5595,10 @@ GameObject:
   - component: {fileID: 8770017588083632602}
   - component: {fileID: 530536969666601973}
   - component: {fileID: 8770017588083632603}
-  m_Layer: 0
+  - component: {fileID: 8770017588083632604}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5664,9 +5714,10 @@ GameObject:
   - component: {fileID: 8436406925618134332}
   - component: {fileID: 4168958491735759826}
   - component: {fileID: 8436406925618134333}
-  m_Layer: 0
+  - component: {fileID: 8436406925618134334}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5797,9 +5848,9 @@ GameObject:
   - component: {fileID: 3824091982747533692}
   - component: {fileID: 286509512184925964}
   - component: {fileID: 4019905986331002284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5897,6 +5948,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8861180440997155986, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &4067761746857032629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814811581465775484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 9218019999446174820, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &4083335671390877885
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6129,7 +6196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1200052996952170992, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+  - {fileID: 2100000, guid: 6a978facdb1c6e849b54806e4e0bb4ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6322,6 +6389,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2911094460527971725, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &4603753083338594735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748679107149128510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -1068670773016549339, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &4618903252054762550
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6378,6 +6461,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7264420165973751989, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &4618903252054762552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396783653167198385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -8864772512743143413, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &4641707844010031619
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6524,9 +6623,10 @@ GameObject:
   - component: {fileID: 8892056755386917941}
   - component: {fileID: 5716720892336127971}
   - component: {fileID: 8892056755386917942}
-  m_Layer: 0
+  - component: {fileID: 8892056755386917943}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6908,9 +7008,10 @@ GameObject:
   - component: {fileID: 7921772946640438708}
   - component: {fileID: 6248114798770733776}
   - component: {fileID: 7921772946640438709}
-  m_Layer: 0
+  - component: {fileID: 7921772946640438710}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7030,9 +7131,10 @@ GameObject:
   - component: {fileID: 7209540934697488721}
   - component: {fileID: 3238866501265114839}
   - component: {fileID: 7884003860886581974}
-  m_Layer: 0
+  - component: {fileID: 7884003860886581975}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7143,6 +7245,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9258629174587445, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &5684885232825472619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281460596470286051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 6218806544224198958, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &5687009440071993157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7197,9 +7315,10 @@ GameObject:
   - component: {fileID: 8764520312841222136}
   - component: {fileID: 5687009440071993157}
   - component: {fileID: 8764520312841222137}
-  m_Layer: 0
+  - component: {fileID: 8764520312841222138}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7216,9 +7335,10 @@ GameObject:
   - component: {fileID: 4187881004986752646}
   - component: {fileID: 9118923709801692870}
   - component: {fileID: 9118923709801692871}
-  m_Layer: 0
+  - component: {fileID: 9118923709801692872}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7523,9 +7643,10 @@ GameObject:
   - component: {fileID: 6749855589971243323}
   - component: {fileID: 1853473051662272721}
   - component: {fileID: 6836176053066708466}
-  m_Layer: 0
+  - component: {fileID: 6836176053066708467}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7656,9 +7777,10 @@ GameObject:
   - component: {fileID: 6015820136757509448}
   - component: {fileID: 5120916606014911508}
   - component: {fileID: 6015820136757509449}
-  m_Layer: 0
+  - component: {fileID: 6015820136757509450}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7715,6 +7837,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2670583706153098753, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6015820136757509450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967705346761146155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 5291741293823543488, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &6024784378753005490
 Transform:
   m_ObjectHideFlags: 0
@@ -7759,6 +7897,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3578723373924186483, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6032271449913756606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683033938716139892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -2017463646819330357, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &6065543421482520978
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7812,9 +7966,10 @@ GameObject:
   - component: {fileID: 7705699214248788949}
   - component: {fileID: 2267650269339475028}
   - component: {fileID: 7705699214248788950}
-  m_Layer: 0
+  - component: {fileID: 7705699214248788951}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7831,9 +7986,10 @@ GameObject:
   - component: {fileID: 3051332500392478470}
   - component: {fileID: 703341492913875934}
   - component: {fileID: 6137217290298685706}
-  m_Layer: 0
+  - component: {fileID: 6137217290298685707}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7852,6 +8008,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2246228936936605949, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6137217290298685707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137217290298685705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 8592983806192231278, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &6215193426517381585
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7999,6 +8171,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8314571269056883277, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6294930636754896477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653397257626916079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -489680568437564327, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 2296671985223798716}
+  transparency: 0.3
 --- !u!4 &6295617629887790302
 Transform:
   m_ObjectHideFlags: 0
@@ -8225,6 +8413,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6483373102336730412, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6547956131293507533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849326748922195098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 4967148090922787682, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &6564407583270251009
 GameObject:
   m_ObjectHideFlags: 0
@@ -8508,9 +8712,10 @@ GameObject:
   - component: {fileID: 2824887579803606064}
   - component: {fileID: 2735332647842144193}
   - component: {fileID: 8449487253469362393}
-  m_Layer: 0
+  - component: {fileID: 8449487253469362394}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8600,6 +8805,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8792586484180348971, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &6836176053066708467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858240679950762287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -489680568437564327, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 1853473051662272721}
+  transparency: 0.3
 --- !u!1 &6895389238325207053
 GameObject:
   m_ObjectHideFlags: 0
@@ -8848,9 +9069,10 @@ GameObject:
   - component: {fileID: 535435172111119304}
   - component: {fileID: 2129249231761570712}
   - component: {fileID: 7398681264347309171}
-  m_Layer: 0
+  - component: {fileID: 7398681264347309172}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8869,6 +9091,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2810966353409093201, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7398681264347309172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7398681264347309170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -3555832077480482423, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &7415242158914561575
 GameObject:
   m_ObjectHideFlags: 0
@@ -9024,9 +9262,10 @@ GameObject:
   - component: {fileID: 8877581180180027955}
   - component: {fileID: 704025417063945879}
   - component: {fileID: 9119545509263701411}
-  m_Layer: 0
+  - component: {fileID: 9119545509263701412}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9116,6 +9355,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2005475787124032521, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7585196304284021489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723600954014852102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 7012716009388577132, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &7639739920562333578
 Transform:
   m_ObjectHideFlags: 0
@@ -9160,6 +9415,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7004783832934855251, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7649465431580218941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001545570855352133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -5312785887542487247, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &7660582306051300299
 Transform:
   m_ObjectHideFlags: 0
@@ -9189,6 +9460,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1430590514721885144, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7660582306051300301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537139001709842473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -2344548376362425923, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &7705699214248788949
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9211,6 +9498,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3251043160451817915, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7705699214248788951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097210952721286864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 4681131185061675479, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &7715192090148551653
 GameObject:
   m_ObjectHideFlags: 0
@@ -9223,9 +9526,10 @@ GameObject:
   - component: {fileID: 9150058832546533029}
   - component: {fileID: 9090278245325751863}
   - component: {fileID: 9150058832546533030}
-  m_Layer: 0
+  - component: {fileID: 9150058832546533031}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9505,6 +9809,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8172680918820081068, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7884003860886581975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353857445422259822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 5326195423849873574, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &7888631858425980993
 Transform:
   m_ObjectHideFlags: 0
@@ -9542,6 +9862,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5014901743460754363, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &7921772946640438710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5193824817034946245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 5520597207404748081, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &7929036475154160097
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9605,20 +9941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
---- !u!65 &7938718043153935602
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352507697466284272}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.4891078, y: 5.522499, z: 3.5855212}
-  m_Center: {x: -0.238315, y: -1.8623667, z: 0.30370772}
+  material: {fileID: 2100000, guid: 6a978facdb1c6e849b54806e4e0bb4ed, type: 2}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &7953426746888442776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9910,7 +10235,6 @@ GameObject:
   - component: {fileID: 763392349771254326}
   - component: {fileID: 8981784598861078337}
   - component: {fileID: 8981784598861078338}
-  - component: {fileID: 8981784598861078341}
   - component: {fileID: 8981784598861078340}
   m_Layer: 7
   m_Name: Grass
@@ -9958,9 +10282,10 @@ GameObject:
   - component: {fileID: 5663099043964064474}
   - component: {fileID: 2945157395709466985}
   - component: {fileID: 8233280082089233016}
-  m_Layer: 0
+  - component: {fileID: 8233280082089233017}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9979,6 +10304,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1109158738587986610, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8233280082089233017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233280082089233015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -9141512626445243135, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &8277978354852026486
 GameObject:
   m_ObjectHideFlags: 0
@@ -10136,9 +10477,10 @@ GameObject:
   - component: {fileID: 7430243667417970895}
   - component: {fileID: 3166136348300297300}
   - component: {fileID: 8373187058500593699}
-  m_Layer: 0
+  - component: {fileID: 8373187058500593700}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10157,6 +10499,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8338533158269985661, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8373187058500593700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8373187058500593698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -528982942773058477, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &8402249149553327477
 GameObject:
   m_ObjectHideFlags: 0
@@ -10169,9 +10527,10 @@ GameObject:
   - component: {fileID: 1490553681428852348}
   - component: {fileID: 9015461396958190276}
   - component: {fileID: 9015461396958190277}
-  m_Layer: 0
+  - component: {fileID: 9015461396958190278}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10232,6 +10591,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6531525120215824829, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8424899556102994535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664377644735249312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -8676560387458461868, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &8436406925618134332
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10254,6 +10629,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7722797094005017668, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8436406925618134334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865565889977826431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -6063655182546971379, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &8439249590408075325
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10339,6 +10730,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7320337711353344170, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8449487253469362394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743197075653105208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -5590689813857646558, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &8453501323069633879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10490,6 +10897,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7567532504055388576, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8626245432007725892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296464987518214979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 4710944841124544565, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &8704691983267755007
 GameObject:
   m_ObjectHideFlags: 0
@@ -10579,6 +11002,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2274429698735732484, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8717660497415480995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999994198105076388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 7708376916741287588, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &8738104143477018210
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10623,6 +11062,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2197432529730985287, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8764520312841222138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690513488936499266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -1889201540336897362, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &8770017588083632602
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10645,6 +11100,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3635512377249483938, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8770017588083632604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823815088689062487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -4943282823186076289, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &8797890050856270608
 Transform:
   m_ObjectHideFlags: 0
@@ -10723,6 +11194,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4612637467987462802, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8892056755386917943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4763101765062800137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 8979951669121496299, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &8902580877873140380
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10823,6 +11310,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1198743231517016826, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &8935823525122495214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913308150968153818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 4691340473561754241, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!1 &8953012336361628774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10925,19 +11428,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9248384, y: 2.0301526, z: 2.0129054}
   m_Center: {x: -0.0000004713462, y: -0.000000019998069, z: -0.7631498}
---- !u!114 &8981784598861078341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8160168807500551005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c5585a33bac41409c5e2fdcab07bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &8997795348275730355
 GameObject:
   m_ObjectHideFlags: 0
@@ -11027,6 +11517,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1416666213904562892, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9015461396958190278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402249149553327477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 6110333789802404415, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &9090278245325751863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11125,6 +11631,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5486450741063627033, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9118923709801692872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692690220451559465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 8071961817254749056, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &9119545509263701410
 Transform:
   m_ObjectHideFlags: 0
@@ -11154,6 +11676,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5021170130000299562, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9119545509263701412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566532180554990163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -1659718639612640202, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!4 &9144439772006878713
 Transform:
   m_ObjectHideFlags: 0
@@ -11250,6 +11788,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3779470537144863991, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9150058832546533031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715192090148551653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 734997567693566722, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!33 &9155974130559033220
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11357,6 +11910,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3165985885265623073, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9174283112443797884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817955929028025586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 3167330399427586656, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3
 --- !u!23 &9186032650539215961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11425,9 +11994,10 @@ GameObject:
   - component: {fileID: 844979111128509285}
   - component: {fileID: 3761635671400834432}
   - component: {fileID: 9203293537115492524}
-  m_Layer: 0
+  - component: {fileID: 9203293537115492525}
+  m_Layer: 9
   m_Name: Tree
-  m_TagString: Obstruction
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11446,3 +12016,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5854088795082504319, guid: bee7b48083d9fab44ab8e076c8b00750, type: 3}
+--- !u!114 &9203293537115492525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203293537115492523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6ead06abccbc40b7771b472637502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: -5675915697002076943, guid: bee7b48083d9fab44ab8e076c8b00750,
+    type: 3}
+  objectRenderer: {fileID: 4274041972155033346}
+  transparency: 0.3

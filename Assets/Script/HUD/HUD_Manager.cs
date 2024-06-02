@@ -51,8 +51,9 @@ public class HUD_Manager : MonoBehaviour
         OnUpdateRune();
         OnUpdatePotionUI();
         currentPotion = PlayerData.instance.currentPotion;
+        deathUI.SetActive(false);
+        pauseMenuPanel.SetActive(false);
 
-      
         GameObject heal = GameObject.Find("Healing");
         ParticleSystem particle = healEffect;
         healEffect = heal.GetComponent<ParticleSystem>();

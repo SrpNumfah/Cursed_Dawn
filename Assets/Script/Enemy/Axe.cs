@@ -7,7 +7,12 @@ public class Axe : MonoBehaviour
     public float speed = 10f;
     public float lifeTime = 2f;
     public int damage = 10;
+    [SerializeField] Animator axeAnim;
 
+    private void Awake()
+    {
+        axeAnim = GetComponent<Animator>();
+    }
     private void Start()
     {
         Destroy(gameObject, lifeTime);
@@ -16,6 +21,7 @@ public class Axe : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        axeAnim.Play(1);
     }
 
     private void OnTriggerEnter(Collider other)

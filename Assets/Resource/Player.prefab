@@ -5140,6 +5140,7 @@ MonoBehaviour:
   healingHp: 15
   playerSprite: {fileID: 0}
   Ondamage: {fileID: 1656455750491024628}
+  shield: {fileID: 0}
 --- !u!1 &6980373436828171397
 GameObject:
   m_ObjectHideFlags: 0

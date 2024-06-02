@@ -32,4 +32,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map_village/voice.unity
     guid: 75747ea0ed4224e419e528c68c05d011
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_1.unity
+    guid: b33d3455c6aea0e4aaf47e8d02bbe063
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_2.unity
+    guid: fa47afccab142b34493221507649c8d5
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_3.unity
+    guid: e106016754491f54b97752930b359c44
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_4.unity
+    guid: 145c084d1efe9d04b8e2122ccd6755a7
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_5.unity
+    guid: c7ae8c5c4aa0f2b46966aef5dbe4ad42
+  - enabled: 1
+    path: Assets/Scenes/Map_castle/Map2_6.unity
+    guid: bf99eca1d5c41854d84ee0aad79f5ee3
   m_configObjects: {}

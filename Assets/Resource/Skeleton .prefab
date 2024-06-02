@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4955371692779223189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.77, y: -0.22, z: 0}
+  m_LocalPosition: {x: -1.67, y: -0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b39f11a249e70a459c47c92eb260c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.16, y: 5.66}
@@ -177,11 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c433375ff051231408faf2e08b7e5786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 50
   currentHp: 0
   detectionRadius: 30.35
   rotationSpeed: 5
-  throwRate: 1
+  throwRate: 0.5
   axePrefab: {fileID: 8710027974058732749, guid: 0e80f82df60459847ba642cb9dbc54df,
     type: 3}
   throwPoint: {fileID: 4955371692779223188}

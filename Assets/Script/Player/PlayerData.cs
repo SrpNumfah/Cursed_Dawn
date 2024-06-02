@@ -25,9 +25,6 @@ public class PlayerData : MonoBehaviour
             currentHealth = 50;
             rune = 100;
 
-            
-
-
             PlayerPrefs.DeleteAll();
 
             instance = this;
