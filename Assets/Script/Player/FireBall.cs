@@ -9,6 +9,7 @@ public class FireBall : MonoBehaviour
     public int damage = 10;
     public Transform target;
     public float rotationSpeed = 5f;
+    public AudioSource audioSource;
 
 
 
@@ -43,6 +44,7 @@ public class FireBall : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+                audioSource.Play();
                 Debug.Log("Hit enemy with damage: " + damage);
             }
             Destroy(gameObject);
