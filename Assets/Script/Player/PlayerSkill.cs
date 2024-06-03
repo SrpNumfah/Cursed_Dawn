@@ -31,7 +31,6 @@ public class PlayerSkill : MonoBehaviour
             if (fireCooldown <= 0)
             {
                 hud.SkillCoolDown1();
-              
                 StartCoroutine(FireRate());
                 fireCooldown = 1f / fireRate;
             }

@@ -28,6 +28,7 @@ public class LoadSceneManager : MonoBehaviour
         SceneManager.LoadScene("Map1");
         PlayerData.instance.loadedScenes = new List<int>();
         PlayerData.instance.currentHealth = 50;
+        PlayerData.instance.currentPotion = 0;
     }
 
     public void VoiceDemo()

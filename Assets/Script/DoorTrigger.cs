@@ -19,7 +19,7 @@ public class DoorTrigger : MonoBehaviour
     {
         animator.SetTrigger("fadeOut");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(8);
         PlayerData.instance.loadedScenes = new List<int>();
         Debug.Log("loadescene");
     }

@@ -14,7 +14,7 @@ public class RandomMap_2 : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(14);
+        SceneManager.LoadScene(13);
     }
     public void OnRandom()
     {
@@ -26,7 +26,7 @@ public class RandomMap_2 : MonoBehaviour
         int index;
         do
         {
-            index = Random.Range(10, 14);
+            index = Random.Range(9, 13);
             yield return null;
 
         } while (index == SceneManager.GetActiveScene().buildIndex || PlayerData.instance.loadedScenes.Contains(index));

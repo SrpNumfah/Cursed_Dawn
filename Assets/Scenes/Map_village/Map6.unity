@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c59df269bd3d544913802cb3c86e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 5
+  maxHp: 10
   currentHp: 0
   lookRadius: 98.34
   attackRadius: 12.3
@@ -2662,7 +2662,6 @@ MonoBehaviour:
   currentPotion: 0
   currentExp: 0
   currentLevel: 0
-  scenenCount: 0
   loadedScenes: 
 --- !u!4 &1929446620
 Transform:
